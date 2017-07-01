@@ -1,0 +1,63 @@
+<div class="row">
+	<h3 class="text-center hide-for-small-only">
+		<u>INCEPTION</u>
+	</h3>
+	<div class="text-justify hide-for-small-only" [innerHTML]="mainText"
+		style="background-color: #CCCCCC; border-radius: 20px; padding: 10px;">
+
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="medium-6 columns ui-grid ui-grid-responsive ui-fluid" style='overflow: hidden' >
+		<p-galleria [images]="images" (onImageClicked)="currentImage($event)" class='ui-grid-col-10'
+			[showCaption]="true"></p-galleria>
+	</div>
+	<div class="medium-6 large-5 columns">
+
+		<label>Size <select>
+				<option value="husker">Small</option>
+				<option value="starbuck">Medium</option>
+				<option value="hotdog">Large</option>
+				<option value="apollo">Yeti</option>
+		</select>
+		</label>
+
+		<div class="row">
+			<div class="small-3 columns">
+				<label for="middle-label" class="middle">Quantity</label>
+			</div>
+			<div class="small-9 columns">
+				<input type="text" id="middle-label" placeholder="One fish two fish">
+			</div>
+		</div>
+
+		<a href="#" class="button large expanded">Buy Now</a>
+
+		<div class="small secondary expanded button-group">
+			<a class="button">Facebook</a> <a class="button">Twitter</a> <a
+				class="button">Yo</a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="row">
+		<div class="small-3 columns">
+			<label for="middle-label" class="middle">Quantity</label>
+		</div>
+		<div class="small-9 columns">
+			<input type="text" id="middle-label" placeholder="One fish two fish">
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="row">
+		<div class="small-3 columns">
+			<label for="middle-label" class="middle">Quantity</label>
+		</div>
+		<div class="small-9 columns">
+			<input type="text" id="middle-label" placeholder="One fish two fish">
+		</div>
+	</div>
+</div>

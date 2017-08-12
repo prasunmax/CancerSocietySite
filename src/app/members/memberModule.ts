@@ -16,7 +16,7 @@ import { MemberItemComponent } from './member-list/member-item.component';
 import { RouterModule } from '@angular/router';
 import { DataListModule, DialogModule } from 'primeng/primeng';
 import { CommonModule } from '@angular/common';
-
+ 
 @NgModule({
   declarations: [MembersComponent,
     MemberListComponent,

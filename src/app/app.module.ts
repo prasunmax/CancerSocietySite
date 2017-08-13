@@ -4,14 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MemberModule } from './members/memberModule';
 import {
-  ConfirmationService,
-  ConfirmDialogModule,
-  ButtonModule,
-  InputTextModule,
+  AccordionModule,
   MenubarModule,
-  ProgressBarModule,
   GalleriaModule,
-  PanelMenuModule
+  PanelMenuModule,
+  SharedModule
 } from 'primeng/primeng';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { routing } from './app.routes';
@@ -26,6 +23,7 @@ import { MenuComponent } from './menu/menu.component';
 
 import { MemberService } from './members/member.service';
 import { MenuService } from './menu/menu.service';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +32,8 @@ import { MenuService } from './menu/menu.service';
     HomeComponent,
     EventsComponent,
     OfficeComponent,
-    ExclusiveComponent
+    ExclusiveComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +45,8 @@ import { MenuService } from './menu/menu.service';
     RouterModule,
     MemberModule,
     PanelMenuModule,
+    AccordionModule,
+    SharedModule,
     BrowserAnimationsModule
   ],
   providers: [MenuService, MemberService],

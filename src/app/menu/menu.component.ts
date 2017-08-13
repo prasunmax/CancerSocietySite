@@ -29,8 +29,8 @@ export class MenuComponent implements OnInit {
             ]
           },
           { label: 'Members', routerLink: ['/members'] },
-          { label: 'News' },
-          { label: 'Awards' }
+          { label: 'News' , routerLink: ['/news']},
+          { label: 'Awards', routerLink: [''] }
         ]
       },
       {

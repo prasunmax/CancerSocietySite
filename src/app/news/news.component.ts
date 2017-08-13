@@ -1,8 +1,17 @@
+import {Component, OnInit} from '@angular/core';
+import {NewsService} from './news.service';
+import {News} from './news';
 
-import { Component, OnInit } from '@angular/core';
-
-import {AccordionModule} from 'primeng/primeng';
-import {SharedModule} from 'primeng/primeng';
+enum NewsPaperName {
+  UB,
+  ABP,
+  AK,
+  BD,
+  DJ,
+  HD,
+  JS,
+  PK
+};
 
 @Component({
   selector: 'prasun-news',
@@ -11,15 +20,26 @@ import {SharedModule} from 'primeng/primeng';
 })
 export class NewsComponent implements OnInit {
   index = 0;
+  newspaper: News[][];
 
-  constructor() { }
+  constructor(private newsService: NewsService) {
+  }
 
   ngOnInit() {
   }
 
   onTabOpen(e) {
     this.index = e.index;
-    alert(this.index);
+    const page = this;
+    this.newsService.getData(NewsPaperName[this.index].toString()).subscribe(function (data) {
+      page.newspaper[this.index] = data;
+
+      console.log('Completed !!!' + data);
+    }, function (err) {
+      console.error(err);
+    }, function () {
+      console.log('done');
+    });
   }
 
 }

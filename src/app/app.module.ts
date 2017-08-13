@@ -23,7 +23,7 @@ import { MenuComponent } from './menu/menu.component';
 
 import { MemberService } from './members/member.service';
 import { MenuService } from './menu/menu.service';
-import { NewsComponent } from './news/news.component';
+import {NewsModule} from './news/newsModule';
 
 @NgModule({
   declarations: [
@@ -32,8 +32,7 @@ import { NewsComponent } from './news/news.component';
     HomeComponent,
     EventsComponent,
     OfficeComponent,
-    ExclusiveComponent,
-    NewsComponent
+    ExclusiveComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +46,7 @@ import { NewsComponent } from './news/news.component';
     PanelMenuModule,
     AccordionModule,
     SharedModule,
+    NewsModule,
     BrowserAnimationsModule
   ],
   providers: [MenuService, MemberService],

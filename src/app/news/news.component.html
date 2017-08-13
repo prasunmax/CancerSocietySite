@@ -1,42 +1,98 @@
-<p-accordion [multiple]="true" [lazy]="true" (onOpen)="onTabOpen($event)">
+<p-accordion [lazy]="true" (onOpen)="onTabOpen($event)">
   <p-accordionTab>
     <p-header>
       <img src="http://sumitacancersociety.org/newspaper/Header_1.jpg" style="height: 40px;" alt="UttarBanga"/>
     </p-header>
+    <p-dataGrid [value]="papers[0]">
+      <ng-template let-paper pTemplate="body">
+        <div class="ui-g-12 ui-md-3">
+          <a href="{{paper.url}}" onclick="onLinkClick($event,paper.url,paper.nameUrl)">{{paper.Date}}</a>
+        </div>
+      </ng-template>
+    </p-dataGrid>
   </p-accordionTab>
   <p-accordionTab>
     <p-header>
       <img src="http://sumitacancersociety.org/newspaper/Header_2.jpg" style="height: 40px;" alt="AnandaBazarPatrika"/>
     </p-header>
+    <p-dataGrid [value]="papers[1]">
+      <ng-template let-paper pTemplate="body">
+        <div class="ui-g-12 ui-md-3">
+          <a href="{{paper.url}}" onclick="onLinkClick($event,paper.url,paper.nameUrl)">{{paper.Date}}</a>
+        </div>
+      </ng-template>
+    </p-dataGrid>
   </p-accordionTab>
   <p-accordionTab>
     <p-header>
       <img src="http://sumitacancersociety.org/newspaper/Header_4.jpg" style="height: 40px;" alt="Aajkal"/>
     </p-header>
+    <p-dataGrid [value]="papers[2]">
+      <ng-template let-paper pTemplate="body">
+        <div class="ui-g-12 ui-md-3">
+          <a href="{{paper.url}}" onclick="onLinkClick($event,paper.url,paper.nameUrl)">{{paper.Date}}</a>
+        </div>
+      </ng-template>
+    </p-dataGrid>
   </p-accordionTab>
   <p-accordionTab>
     <p-header>
       <img src="http://sumitacancersociety.org/newspaper/Header_5.JPG" style="height: 40px;" alt="BharatDarshan"/>
     </p-header>
+    <p-dataGrid [value]="papers[3]">
+      <ng-template let-paper pTemplate="body">
+        <div class="ui-g-12 ui-md-3">
+          <a href="{{paper.url}}" onclick="onLinkClick($event,paper.url,paper.nameUrl)">{{paper.Date}}</a>
+        </div>
+      </ng-template>
+    </p-dataGrid>
   </p-accordionTab>
   <p-accordionTab>
     <p-header>
       <img src="http://sumitacancersociety.org/newspaper/Header_6.jpg" style="height: 40px;" alt="BharatDarshan"/>
     </p-header>
+    <p-dataGrid [value]="papers[4]">
+      <ng-template let-paper pTemplate="body">
+        <div class="ui-g-12 ui-md-3">
+          <a href="{{paper.url}}" onclick="onLinkClick($event,paper.url,paper.nameUrl)">{{paper.Date}}</a>
+        </div>
+      </ng-template>
+    </p-dataGrid>
   </p-accordionTab>
   <p-accordionTab>
     <p-header>
       <img src="http://sumitacancersociety.org/newspaper/Header_7.JPG" style="height: 40px;" alt="BharatDarshan"/>
     </p-header>
+    <p-dataGrid [value]="papers[5]">
+      <ng-template let-paper pTemplate="body">
+        <div class="ui-g-12 ui-md-3">
+          <a href="{{paper.url}}" onclick="onLinkClick($event,paper.url,paper.nameUrl)">{{paper.Date}}</a>
+        </div>
+      </ng-template>
+    </p-dataGrid>
   </p-accordionTab>
   <p-accordionTab>
     <p-header>
       <img src="http://sumitacancersociety.org/newspaper/Header_8.JPG" style="height: 40px;" alt="BharatDarshan"/>
     </p-header>
+    <p-dataGrid [value]="papers[6]">
+      <ng-template let-paper pTemplate="body">
+        <div class="ui-g-12 ui-md-3">
+          <a href="{{paper.url}}" onclick="onLinkClick($event,paper.url,paper.nameUrl)">{{paper.Date}}</a>
+        </div>
+      </ng-template>
+    </p-dataGrid>
   </p-accordionTab>
   <p-accordionTab>
     <p-header>
       <img src="http://sumitacancersociety.org/newspaper/Header_9.jpg" style="height: 40px;" alt="BharatDarshan"/>
     </p-header>
+    <p-dataGrid [value]="papers[7]">
+      <ng-template let-paper pTemplate="body">
+        <div class="ui-g-12 ui-md-3">
+          <a href="{{paper.url}}" onclick="onLinkClick($event,paper.url,paper.nameUrl)">{{paper.Date}}</a>
+        </div>
+      </ng-template>
+    </p-dataGrid>
   </p-accordionTab>
 </p-accordion>

@@ -3,23 +3,20 @@
  */
 
 
-import { NgModule } from '@angular/core';
-import { SumitaHttpService } from '../shared/sumita-http.service';
+import {NgModule} from '@angular/core';
+import {SumitaHttpService} from '../shared/sumita-http.service';
 import {RouterModule} from '@angular/router';
 import {NewsService} from './news.service';
 import {NewsComponent} from './news.component';
 import {CommonModule} from '@angular/common';
-import {
-  AccordionModule,
-  DataGridModule,
-  SharedModule
-} from 'primeng/primeng';
+import {AccordionModule, DataGridModule, DialogModule, SharedModule} from 'primeng/primeng';
+
 // import {editorModule} from "../tiny-mce-editor/editorModule";
 
 @NgModule({
   declarations: [NewsComponent
   ],
-  imports: [RouterModule, AccordionModule, CommonModule, SharedModule, DataGridModule],
+  imports: [RouterModule, AccordionModule, CommonModule, SharedModule, DataGridModule, DialogModule],
   providers: [SumitaHttpService, NewsService],
   exports: [NewsComponent]
 })

@@ -1,9 +1,8 @@
 export class News {
   constructor(
     public id: number,
-    public name: string,
-    public nameUrl: string,
+    public nmUrl: string,
     public url: string,
-    public Date: Date) {
+    public nwDate: string) {
   }
 }

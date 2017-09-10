@@ -29,7 +29,7 @@ export class MenuComponent implements OnInit {
             ]
           },
           { label: 'Members', routerLink: ['/members'] },
-          { label: 'News' , routerLink: ['/news']},
+          {label: 'On The News', routerLink: ['/news']},
           { label: 'Awards', routerLink: [''] }
         ]
       },

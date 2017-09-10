@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
-import 'rxjs/Rx'; 
+import 'rxjs/Rx';
 
 @Injectable()
 export class SumitaHttpService {

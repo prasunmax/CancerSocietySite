@@ -23,6 +23,8 @@ enum NewsPaperName {
 })
 export class NewsComponent implements OnInit {
   index = 0;
+  newsType = '';
+  newspaper: News[];
   newspaperUB: News[];
   newspaperSD: News[];
   newspaperUS: News[];
@@ -54,10 +56,16 @@ export class NewsComponent implements OnInit {
   }
 
 
-  onTabOpen(e) {
+  onTabOpen(e, type: string) {
+
     this.index = e.index;
     const page = this;
-    this.newsService.getData(NewsPaperName[this.index].toString()).subscribe(function (data) {
+    if (type) {
+      this.newsType = type;
+    } else {
+      this.newsType = NewsPaperName[this.index].toString();
+    }
+    this.newsService.getData(this.newsType).subscribe(function (data) {
       if (page.index === NewsPaperName.UB) {
         page.newspaperUB = data;
       }
@@ -87,6 +95,9 @@ export class NewsComponent implements OnInit {
       }
       if (page.index === NewsPaperName.TS) {
         page.newspaperTS = data;
+      }
+      if (page.newsType === 'ALL') {
+        page.newspaper = data;
       }
       console.log('Completed !!!' + data);
     }, function (err) {

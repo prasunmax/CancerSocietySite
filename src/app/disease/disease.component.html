@@ -1,0 +1,31 @@
+<p-dataGrid [value]="diseases" [lazy]="true" (onLazyLoad)="onTabOpen($event,'ALL')">
+  <ng-template let-paper pTemplate="body">
+    <div class="ui-g-12 ui-md-3">
+      <a href="{{paper.nmUrl}}" (click)="selectedPaper($event, paper,index)">{{paper.nwDate}}</a>
+    </div>
+  </ng-template>
+</p-dataGrid>
+</p-tabPanel>
+
+<p-dialog header="Disease Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
+          (onAfterHide)="onDialogHide()">
+  <div class="ui-grid ui-grid-responsive ui-grid-pad" *ngIf="selectedNews"
+       style="font-size:16px;text-align:center;padding:20px">
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-12" style="text-align:center"><img
+        src="http://sumitacancersociety.org/newspaper/{{selectedNews.url}}"></div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-4">Date:</div>
+      <div class="ui-grid-col-8">{{selectedNews.nwDate}}</div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-12"><img
+        src="http://sumitacancersociety.org/newspaper/{{selectedNews.nmUrl}}"></div>
+    </div>
+  </div>
+</p-dialog>
+
+
+
+

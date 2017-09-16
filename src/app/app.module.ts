@@ -24,6 +24,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MemberService } from './members/member.service';
 import { MenuService } from './menu/menu.service';
 import {NewsModule} from './news/newsModule';
+import { DiseaseComponent } from './disease/disease.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {NewsModule} from './news/newsModule';
     HomeComponent,
     EventsComponent,
     OfficeComponent,
-    ExclusiveComponent
+    ExclusiveComponent,
+    DiseaseComponent
   ],
   imports: [
     BrowserModule,

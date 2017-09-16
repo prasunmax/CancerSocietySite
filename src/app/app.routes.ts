@@ -6,12 +6,15 @@ import {ExclusiveComponent} from './exclusive/exclusive.component';
 import {OfficeComponent} from './office/office.component';
 import {EventsComponent} from './events/events.component';
 import {NewsComponent} from './news/news.component';
+import {DiseaseComponent} from './disease/disease.component';
 
 const APP_ROUTES: Routes = [{path: '', component: HomeComponent},
   {path: 'members', component: MembersComponent, children: MEMBER_ROUTES},
   {path: 'news', component: NewsComponent},
   {path: 'exclusive', component: ExclusiveComponent},
   {path: 'office', component: OfficeComponent},
+  {path: 'disease', component: DiseaseComponent},
+
   {path: 'events', component: EventsComponent}
 ];
 

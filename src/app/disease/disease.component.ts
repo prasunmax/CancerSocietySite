@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Disease} from './disease';
 
 @Component({
@@ -8,9 +8,21 @@ import {Disease} from './disease';
 })
 export class DiseaseComponent implements OnInit {
   diseases: Disease[];
-  constructor() { }
+  selectedDiseases: Disease;
+  displayDialog: boolean;
+
+  constructor() {
+    this.displayDialog = false;
+  }
 
   ngOnInit() {
+  }
+
+  selectedDisease(event: Event, disease: Disease, idx: number) {
+    event.preventDefault();
+    this.selectedDiseases = disease;
+    this.displayDialog = true;
+    console.log('Current Index:' + idx);
   }
 
 }

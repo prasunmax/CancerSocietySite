@@ -1,7 +1,7 @@
 <p-dataGrid [value]="diseases" [lazy]="true" (onLazyLoad)="onTabOpen($event,'ALL')">
-  <ng-template let-paper pTemplate="body">
+  <ng-template let-disease pTemplate="body">
     <div class="ui-g-12 ui-md-3">
-      <a href="{{paper.nmUrl}}" (click)="selectedPaper($event, paper,index)">{{paper.nwDate}}</a>
+      <a href="#" (click)="selectedDisease($event, disease,index)">{{disease.title}}</a>
     </div>
   </ng-template>
 </p-dataGrid>

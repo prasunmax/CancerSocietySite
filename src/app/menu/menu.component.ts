@@ -40,6 +40,10 @@ export class MenuComponent implements OnInit {
           { label: 'Undo', icon: 'fa-mail-forward' },
           { label: 'Redo', icon: 'fa-mail-forward' }
         ]
+      },
+      {
+        label: 'The Disease', routerLink: ['/disease'],
+        icon: 'fa-edit'
       }
     ];
 

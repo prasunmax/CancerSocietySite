@@ -1,7 +1,6 @@
 export class Disease {
-  constructor(
-    public id: number,
-    public title: string,
-    public details: string) {
+  constructor(public id: string,
+              public title: string,
+              public details: string) {
   }
 }

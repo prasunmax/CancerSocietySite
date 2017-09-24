@@ -1,29 +1,24 @@
-<p-dataGrid [value]="diseases" [lazy]="true" (onLazyLoad)="onTabOpen($event,'ALL')">
+<p-dataGrid [value]="diseases" [lazy]="true" (onLazyLoad)="loadData($event)">
   <ng-template let-disease pTemplate="body">
-    <div class="ui-g-12 ui-md-3">
-      <a href="#" (click)="selectedDisease($event, disease,index)">{{disease.title}}</a>
+    <div style="padding:4px" class="ui-g-12 ui-md-3">
+      <p-panel [header]="disease.title" [style]="{'text-align':'center'}">
+        <hr class="ui-widget-content" style="border-top:0">
+        <i class="fa fa-search" (click)="selectedDisease($event, disease, index)" style="cursor:pointer"></i>
+      </p-panel>
     </div>
   </ng-template>
 </p-dataGrid>
-</p-tabPanel>
 
 <p-dialog header="Disease Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
-          (onAfterHide)="onDialogHide()">
-  <div class="ui-grid ui-grid-responsive ui-grid-pad" *ngIf="selectedNews"
-       style="font-size:16px;text-align:center;padding:20px">
-    <div class="ui-grid-row">
-      <div class="ui-grid-col-12" style="text-align:center"><img
-        src="http://sumitacancersociety.org/newspaper/{{selectedNews.url}}"></div>
+          (onAfterHide)="onDialogHide()" (onShow)="onDetailsShow(selectedDiseases)">
+  <ng-template pTemplate="content">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad" *ngIf="selectedDiseases"
+         style="font-size:16px;text-align:center;padding:20px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12" style="text-align:center">{{selectedDiseases.details | async}}</div>
+      </div>
     </div>
-    <div class="ui-grid-row">
-      <div class="ui-grid-col-4">Date:</div>
-      <div class="ui-grid-col-8">{{selectedNews.nwDate}}</div>
-    </div>
-    <div class="ui-grid-row">
-      <div class="ui-grid-col-12"><img
-        src="http://sumitacancersociety.org/newspaper/{{selectedNews.nmUrl}}"></div>
-    </div>
-  </div>
+  </ng-template>
 </p-dialog>
 
 

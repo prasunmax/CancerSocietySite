@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Disease} from './disease';
-import {DiseaseService} from "./disease.service";
+import {DiseaseService} from './disease.service';
 
 @Component({
   selector: 'prasun-disease',

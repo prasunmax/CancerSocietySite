@@ -18,13 +18,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { EventsComponent } from './events/events.component';
 import { OfficeComponent } from './office/office.component';
-import { ExclusiveComponent } from './exclusive/exclusive.component';
 import { MenuComponent } from './menu/menu.component';
 
 import { MemberService } from './members/member.service';
 import { MenuService } from './menu/menu.service';
 import {NewsModule} from './news/newsModule';
 import {DiseaseModule} from './disease/diseaseModule';
+import {ExclusiveModule} from './exclusive/exclusiveModule';
 
 @NgModule({
   declarations: [
@@ -32,8 +32,7 @@ import {DiseaseModule} from './disease/diseaseModule';
     MenuComponent,
     HomeComponent,
     EventsComponent,
-    OfficeComponent,
-    ExclusiveComponent
+    OfficeComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +48,7 @@ import {DiseaseModule} from './disease/diseaseModule';
     SharedModule,
     NewsModule,
     DiseaseModule,
+    ExclusiveModule,
     BrowserAnimationsModule
   ],
   providers: [MenuService, MemberService],

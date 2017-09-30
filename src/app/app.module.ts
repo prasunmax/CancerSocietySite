@@ -25,6 +25,8 @@ import { MenuService } from './menu/menu.service';
 import {NewsModule} from './news/newsModule';
 import {DiseaseModule} from './disease/diseaseModule';
 import {ExclusiveModule} from './exclusive/exclusiveModule';
+import {CallbackComponent} from './callback/callback.component';
+import {AuthService} from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import {ExclusiveModule} from './exclusive/exclusiveModule';
     MenuComponent,
     HomeComponent,
     EventsComponent,
-    OfficeComponent
+    OfficeComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,7 @@ import {ExclusiveModule} from './exclusive/exclusiveModule';
     ExclusiveModule,
     BrowserAnimationsModule
   ],
-  providers: [MenuService, MemberService],
+  providers: [MenuService, MemberService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

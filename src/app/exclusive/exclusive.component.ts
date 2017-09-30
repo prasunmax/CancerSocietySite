@@ -9,8 +9,8 @@ declare var Raphael: any;
   styleUrls: ['./exclusive.component.css']
 })
 export class ExclusiveComponent implements OnInit {
-  mainText = 'Test';
-  headerText: string;
+  private mainText = 'Test';
+  private headerText: string;
   private posX = 0.0;
   private posY = 0.0;
   private sposX = 0.0;
@@ -28,18 +28,21 @@ export class ExclusiveComponent implements OnInit {
   private fontSize = 0;
   private xfactor = 3;
   private yfactor = 7;
-  private maxWidth = 800;
+  private maxWidth = 500;
   private items = [];
+  private colorArray: string[] = ['#cc9900', '#ee9977', '#009999', '#aacc33', '#557733'];
+  private posArray: number[] = [180, 225, 270, 315, 360];
 
   constructor(private exclusiveService: ExclusiveService,
               private ngZone: NgZone) {
-    this.exclusiveService.getData(null);
+    this.exclusiveService.getData(-1);
+    const page = this;
     window.onresize = (e) => {
       ngZone.run(() => {
-        this.width = window.innerWidth;
-        this.height = window.innerWidth;
+        page.width = window.innerWidth;
+        page.height = window.innerWidth;
         console.log(this.width);
-        this.finaliseItems();
+        page.finaliseItems();
       });
     };
   }
@@ -47,16 +50,14 @@ export class ExclusiveComponent implements OnInit {
   ngOnInit() {
     this.width = window.innerWidth;
     this.height = window.innerWidth;
-    this.finaliseItems();
-    this.items[0] = [];
-    this.items[0]['exclusive_details'] = '';
-    this.items[0]['exclusive_name'] = '';
+    // this.finaliseItems();
     const page = this;
     this.exclusiveService.activeProject.subscribe(function (data) {
-      this.items = data;
-      page.mainText = this.items[0]['exclusive_details'];
-      console.log(this.text);
-      page.headerText = this.items[0]['exclusive_name'].replace('\\n', '');
+      page.populateItem(data);
+      page.mainText = data[0]['exclusive_details'];
+      console.log(page.mainText);
+      page.headerText = data[0]['exclusive_name'].replace('\\n', '\n');
+      page.finaliseItems();
       console.log(this.headerText);
       console.log('Completed !!!');
     }, function (err) {
@@ -64,6 +65,17 @@ export class ExclusiveComponent implements OnInit {
     }, function () {
       console.log('done');
     });
+  }
+
+  /*
+  Ensuring that only the clicked item is updated
+   */
+  populateItem(data) {
+    for (let i = 0; i < 5; i++) {
+      if (data[i]) {
+        this.items[+data[i]['exclusive_id'] - 1] = data[i];
+      }
+    }
   }
 
   calculateXY(angles) {
@@ -86,14 +98,24 @@ export class ExclusiveComponent implements OnInit {
     }
     this.paper = Raphael('OurWork', this.width, this.width * 3 / 4);
     this.paper.rect(0, 0, this.width, this.width * 3 / 4).attr('fill', 'gray');
-    this.paper.setViewBox(0, 0, this.width, this.width, true);
+    this.paper.setViewBox(0, 0, this.width, this.width * 3 / 4, true);
     // this.drawCircles(this.width);
-    this.drawItems(this.width, this.width, 180, '#cc9900', 1, 'May I help you');
-    this.drawItems(this.width, this.width, 225, '#ee9977', 2, 'Please Help me!!!');
-    this.drawItems(this.width, this.width, 270, '#009999', 3, 'May I help you');
-    this.drawItems(this.width, this.width, 315, '#aacc33', 4, 'May I help you');
-    this.drawItems(this.width, this.width, 360, '#557733', 5, 'May I help you');
+    for (let i = 0; i < this.items.length; i++) {
+      this.prepareItems(i);
+    }
+  }
 
+
+  prepareItems(index) {
+    if (this.items && this.items[index] && this.items[index]['exclusive_name'] !== '') {
+      this.drawItems(this.width, this.width, this.items[index]['exclusive_index'],
+        this.items[index]['exclusive_color'], this.items[index]['exclusive_id'],
+        this.items[index]['exclusive_name'].replace('\\n', '\n'));
+    }
+    /*else {
+         this.drawItems(this.width, this.width, this.posArray[index], this.colorArray[index],
+           index + 1, 'May I help you');
+       }*/
   }
 
   drawItems(width, height, pos, color, point: number, text) {

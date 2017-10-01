@@ -39,7 +39,7 @@ export class ExclusiveComponent implements OnInit {
     const page = this;
     window.onresize = (e) => {
       ngZone.run(() => {
-        page.width = window.innerWidth;
+        page.width = window.innerWidth / 3;
         page.height = window.innerWidth;
         console.log(this.width);
         page.finaliseItems();
@@ -87,8 +87,8 @@ export class ExclusiveComponent implements OnInit {
 
   drawCircles(height) {
     console.log(this.height * 1 / 2 + ' ' + this.height + ' ' + this.height * 25 / 40);
-    this.paper.circle(height * 1 / 2, height / 2, height * 1 / this.xfactor).attr({'hue': .45, 'fill': 'red'});
-    this.paper.circle(height * 1 / 2, height / 2, height * 1 / this.yfactor).attr({'hue': .45, 'fill': 'blue'});
+    this.paper.circle(height * 2 / 3, height / 2, height * 1 / this.xfactor).attr({'hue': .45, 'fill': 'red'});
+    this.paper.circle(height * 2 / 3, height / 2, height * 1 / this.yfactor).attr({'hue': .45, 'fill': 'blue'});
   }
 
   finaliseItems() {
@@ -163,7 +163,7 @@ export class ExclusiveComponent implements OnInit {
       this.paper.getById(this.scid).stop().animate({r: srad}, this.ms, 'elastic');
     }).click(function () {
       parentInst.getDataInfo(point);
-      console.log('This is from big Circle.');
+      // console.log('This is from big Circle.');
     });
 
     this.sc.mouseover(function () {
@@ -174,7 +174,7 @@ export class ExclusiveComponent implements OnInit {
       this.paper.getById(this.cid).stop().animate({r: rad}, this.ms, 'elastic');
     }).click(function () {
       parentInst.getDataInfo(point);
-      console.log('This is from small circle');
+      // console.log('This is from small circle');
     });
 
     this.p.mouseover(function () {
@@ -185,7 +185,7 @@ export class ExclusiveComponent implements OnInit {
       this.paper.getById(this.cid).stop().animate({r: rad}, this.ms, 'elastic');
     }).click(function () {
       parentInst.getDataInfo(point);
-      console.log('This is from Text');
+      // console.log('This is from Text');
     });
 
     this.sp.mouseover(function () {
@@ -196,12 +196,12 @@ export class ExclusiveComponent implements OnInit {
       this.paper.getById(this.cid).stop().animate({r: rad}, this.ms, 'elastic');
     }).click(function () {
       parentInst.getDataInfo(point);
-      console.log('This is from small Text ');
+      // console.log('This is from small Text ');
     });
   }
 
   getDataInfo(number: number) {
-    console.log('Inside' + number);
+    // console.log('Inside' + number);
     this.exclusiveService.getData(number);
   }
 }

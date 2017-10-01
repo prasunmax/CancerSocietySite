@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MenuItem, MenuModule} from 'primeng/primeng';
+import {MenuItem} from 'primeng/primeng';
 import {MenuService} from './menu.service';
 import {AuthService} from '../auth/auth.service';
 
@@ -15,6 +15,7 @@ export class MenuComponent implements OnInit {
   constructor(private menuService: MenuService, public auth: AuthService) {
     auth.handleAuthentication();
   }
+
   ngOnInit() {
     this.isAuthorised = this.auth.isAuthenticated();
     this.items = [
@@ -32,7 +33,7 @@ export class MenuComponent implements OnInit {
             ]
           },
           {label: 'Members', routerLink: ['/members']},
-          {label: 'Members Edit', disabled: true, routerLink: ['/membersE']},
+          {label: 'Members Edit', styleClass: 'visible' + this.isAuthorised, routerLink: ['/membersE']},
           {label: 'On The News', routerLink: ['/news']},
           {label: 'Awards', routerLink: ['']}
         ]

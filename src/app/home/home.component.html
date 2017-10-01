@@ -1,22 +1,23 @@
-  <div class="row ">
-    <div class="small-12 columns">
-      <h3 class="text-center hide-for-small-only">
-        <u>INCEPTION</u>
-      </h3>
-      <div class="text-justify hide-for-small-only" [innerHTML]="mainText"
-           style="background-color: #CCCCCC; border-radius: 20px; padding: 10px;">
+<div class="row ">
+  <div class="small-12 columns">
+    <h3 class="text-center hide-for-small-only">
+      <u>INCEPTION</u>
+    </h3>
+    <div class="text-justify hide-for-small-only" [innerHTML]="mainText"
+         style="background-color: #CCCCCC; border-radius: 20px; padding: 10px;">
 
-      </div>
     </div>
   </div>
-  <br>
-  <div class="row">
-    <div class="ui-g-6" style="overflow:hidden">
-      <p-galleria [images]="images" (onImageClicked)="currentImage($event)" class='ui-grid-col-10'
-                  [showCaption]="true"></p-galleria>
-    </div>
-    <div class="ui-g-6">
-      <div class="row">
+</div>
+<br>
+<div class="row">
+  <div class="ui-g-6" style="overflow:hidden">
+    <p-galleria [images]="images" (onImageClicked)="currentImage($event)" class='ui-grid-col-10'
+                [showCaption]="true"></p-galleria>
+  </div>
+  <div class="ui-g-6">
+    <div class="row">
+      <div class="ui-g-6">
         <label>Size <select>
           <option value="husker">Small</option>
           <option value="starbuck">Medium</option>
@@ -24,18 +25,21 @@
           <option value="apollo">Yeti</option>
         </select>
         </label>
-
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Quantity</label>
-          </div>
-          <div class="small-9 columns">
-            <input type="text" id="middle-label" placeholder="One fish two fish">
-          </div>
+      </div>
+      <div class="ui-g-3">
+        <div class="columns">
+          <label for="middle-label">Quantity</label>
         </div>
-
-        <a href="#" class="button large expanded">Buy Now</a>
-
+        <div class="columns">
+          <input type="text" id="middle-label" placeholder="One fish two fish">
+        </div>
+      </div>
+      <div class="ui-g-3">
+        <a href="#" class="button expanded">Buy Now</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="ui-g">
         <div class="small secondary expanded button-group">
           <a class="button">Facebook</a> <a class="button">Twitter</a> <a
           class="button">Yo</a>
@@ -43,4 +47,5 @@
       </div>
     </div>
   </div>
+</div>
 

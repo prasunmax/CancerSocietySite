@@ -1,27 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MemberModule } from './members/memberModule';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {MemberModule} from './members/memberModule';
 import {
   AccordionModule,
-  MenubarModule,
   GalleriaModule,
+  MenubarModule,
+  MenuModule,
   PanelMenuModule,
   SharedModule
 } from 'primeng/primeng';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { routing } from './app.routes';
-import { RouterModule } from '@angular/router';
+import {routing} from './app.routes';
+import {RouterModule} from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { EventsComponent } from './events/events.component';
-import { OfficeComponent } from './office/office.component';
-import { MenuComponent } from './menu/menu.component';
+import {AppComponent} from './app.component';
+import {HomeComponent} from './home/home.component';
+import {EventsComponent} from './events/events.component';
+import {OfficeComponent} from './office/office.component';
+import {MenuComponent} from './menu/menu.component';
 
-import { MemberService } from './members/member.service';
-import { MenuService } from './menu/menu.service';
+import {MemberService} from './members/member.service';
+import {MenuService} from './menu/menu.service';
 import {NewsModule} from './news/newsModule';
 import {DiseaseModule} from './disease/diseaseModule';
 import {ExclusiveModule} from './exclusive/exclusiveModule';
@@ -45,6 +46,7 @@ import {AuthService} from './auth/auth.service';
     GalleriaModule,
     routing,
     RouterModule,
+    MenuModule,
     MemberModule,
     PanelMenuModule,
     AccordionModule,
@@ -57,4 +59,5 @@ import {AuthService} from './auth/auth.service';
   providers: [MenuService, MemberService, AuthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

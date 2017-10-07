@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   'under treatment, the idea of spreading awareness about the dreadful ' +
   'disease namely cancer came in her fertile mind. She finally came to ' +
   'the decision to form the society and fight the deadly disease through ' +
-  'it.<br> <br> <center> We began with the motto:  <b>"PREVENTION IS BETTER THAN CURE"</b> </center> ' +
+    'it.<br> <br> <p class="text-center"> We began with the motto:  <b>"PREVENTION IS BETTER THAN CURE"</b> </p> ' +
   '<br> We applied for the registration of <strong>"SILIGURI SUMITA ' +
   ' CANCER RELIEF WELFARE &amp; EDUCATIONAL SOCIETY"</strong>. The registration ' +
   'certificate however reached our hand on 2nd June, 2008, while the ' +
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   'at 3.24 P.M. leaving behind the onus of carrying forward her pledge:- ' +
   '<strong>"MAKE THIS WORLD ENTIRELY CANCER FREE"</strong> on us. <br> ' +
   'This (28/11/2008) awareness camp is our first step forwards the ' +
-  'implement action of such an an ambitious dream.</p> ';  
+    'implement action of such an an ambitious dream.</p> ';
   images: any[];
   constructor() { }
 

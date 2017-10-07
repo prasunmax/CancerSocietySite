@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Disease} from './disease';
 import {DiseaseService} from './disease.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'prasun-disease',
@@ -13,8 +14,9 @@ export class DiseaseComponent implements OnInit {
   displayDialog: boolean;
   index: number;
 
-  constructor(private diseaseService: DiseaseService) {
+  constructor(private diseaseService: DiseaseService, private route: ActivatedRoute) {
     this.displayDialog = false;
+    console.log('Fetched id is' + route.snapshot.data[0]['id']);
   }
 
   ngOnInit() {

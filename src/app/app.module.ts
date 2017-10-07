@@ -17,7 +17,6 @@ import {RouterModule} from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
-import {EventsComponent} from './events/events.component';
 import {OfficeComponent} from './office/office.component';
 import {MenuComponent} from './menu/menu.component';
 
@@ -28,13 +27,14 @@ import {DiseaseModule} from './disease/diseaseModule';
 import {ExclusiveModule} from './exclusive/exclusiveModule';
 import {CallbackComponent} from './callback/callback.component';
 import {AuthService} from './auth/auth.service';
+import {AwardsModule} from './awards/awardsModule';
+import {EventsModule} from './events/eventsModule';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HomeComponent,
-    EventsComponent,
     OfficeComponent,
     CallbackComponent
   ],
@@ -54,6 +54,8 @@ import {AuthService} from './auth/auth.service';
     NewsModule,
     DiseaseModule,
     ExclusiveModule,
+    EventsModule,
+    AwardsModule,
     BrowserAnimationsModule
   ],
   providers: [MenuService, MemberService, AuthService],

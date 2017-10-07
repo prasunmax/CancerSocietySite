@@ -28,14 +28,14 @@ export class MenuComponent implements OnInit {
             label: 'Events ...', routerLink: ['/events'],
             icon: 'fa-plus',
             items: [
-              {label: 'On going Events ', routerLink: ['']},
-              {label: 'Upcoming Events ', routerLink: ['']},
+              {label: 'On going Events ', routerLink: ['/ongoing']},
+              {label: 'Upcoming Events ', routerLink: ['/upcoming']},
             ]
           },
           {label: 'Members', routerLink: ['/members']},
-          {label: 'Members Edit', styleClass: 'visible' + this.isAuthorised, routerLink: ['/membersE']},
+          {label: 'Members Edit', visible: false, routerLink: ['/membersE']},
           {label: 'On The News', routerLink: ['/news']},
-          {label: 'Awards', routerLink: ['']}
+          {label: 'Awards', routerLink: ['/awards']}
         ]
       },
       {

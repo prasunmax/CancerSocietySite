@@ -9,7 +9,7 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-  dialogText: 'Disease Details';
+  dialogText = 'Disease Details';
   eventDet: EventBean[];
   selectedEvents: EventBean;
   displayDialog: boolean;

@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
         items: [
           {label: 'Our Exclusive Work ', routerLink: ['/exclusive']},
           {
-            label: 'Events ...', routerLink: ['/events'],
+            label: 'Events ...',
             icon: 'fa-plus',
             items: [
               {label: 'On going Events ', routerLink: ['/ongoing']},

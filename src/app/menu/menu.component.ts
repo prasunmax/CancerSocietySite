@@ -33,7 +33,7 @@ export class MenuComponent implements OnInit {
             ]
           },
           {label: 'Members', routerLink: ['/members']},
-          {label: 'Members Edit', visible: false, routerLink: ['/membersE']},
+          {label: 'Members Edit', visible: this.isAuthorised, routerLink: ['/membersE']},
           {label: 'On The News', routerLink: ['/news']},
           {label: 'Awards', routerLink: ['/awards']}
         ]

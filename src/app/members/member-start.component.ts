@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'prasun-member-start',
   template: `
     <p>
-      member-start Works!
+      
     </p>
   `,
   styles: []

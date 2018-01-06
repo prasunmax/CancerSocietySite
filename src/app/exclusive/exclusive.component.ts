@@ -39,11 +39,16 @@ export class ExclusiveComponent implements OnInit {
     const page = this;
     window.onresize = (e) => {
       ngZone.run(() => {
-        page.width = window.innerWidth / 3;
-        page.height = window.innerWidth;
-        console.log(this.width);
-        page.finaliseItems();
-      });
+          if (!window.matchMedia('(max-width: 40em)').matches) {
+            page.width = window.innerWidth * 2 / 5;
+          } else {
+            page.width = window.innerWidth;
+          }
+          page.height = window.innerWidth;
+          console.log(page.width);
+          page.finaliseItems();
+        }
+      );
     };
   }
 
@@ -97,7 +102,7 @@ export class ExclusiveComponent implements OnInit {
       this.width = this.maxWidth;
     }
     this.paper = Raphael('OurWork', this.width, this.width * 3 / 4);
-    this.paper.rect(0, 0, this.width, this.width * 3 / 4).attr('fill', 'gray');
+    this.paper.rect(0, 0, this.width, this.width).attr('fill', 'gray');
     this.paper.setViewBox(0, 0, this.width, this.width * 3 / 4, true);
     // this.drawCircles(this.width);
     for (let i = 0; i < this.items.length; i++) {

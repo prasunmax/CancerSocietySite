@@ -9,8 +9,8 @@ declare var Raphael: any;
   styleUrls: ['./exclusive.component.css']
 })
 export class ExclusiveComponent implements OnInit {
-  private mainText = 'Test';
-  private headerText: string;
+  mainText = 'Test';
+  headerText: string;
   private posX = 0.0;
   private posY = 0.0;
   private sposX = 0.0;

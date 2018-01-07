@@ -41,6 +41,10 @@ export class DiseaseComponent implements OnInit {
     });
   }
 
+  onDialogHide() {
+    this.selectedDiseases = null;
+  }
+
   loadData(e) {
 
     this.index = e.index;

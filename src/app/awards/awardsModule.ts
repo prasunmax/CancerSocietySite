@@ -7,12 +7,12 @@ import {NgModule} from '@angular/core';
 import {SumitaHttpService} from '../shared/sumita-http.service';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
-import {AccordionModule, DataGridModule, DialogModule, PanelModule, SharedModule} from 'primeng/primeng';
+import {AccordionModule, CarouselModule, DataGridModule, GrowlModule, SharedModule} from 'primeng/primeng';
 import {AwardsComponent} from './awards.component';
 
 @NgModule({
   declarations: [AwardsComponent],
-  imports: [RouterModule, AccordionModule, CommonModule, SharedModule, DataGridModule, DialogModule, PanelModule],
+  imports: [RouterModule, AccordionModule, CommonModule, SharedModule, DataGridModule, CarouselModule, GrowlModule],
   providers: [SumitaHttpService],
   exports: [AwardsComponent]
 })

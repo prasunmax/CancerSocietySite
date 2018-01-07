@@ -43,6 +43,10 @@ export class EventsComponent implements OnInit {
     });
   }
 
+  onDialogHide() {
+    this.selectedEvents = null;
+  }
+
   loadData(e) {
 
     this.index = e.index;

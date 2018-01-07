@@ -9,7 +9,7 @@ import {AuthService} from '../auth/auth.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  private items: MenuItem[];
+  items: MenuItem[];
   private isAuthorised: boolean;
 
   constructor(private menuService: MenuService, public auth: AuthService) {

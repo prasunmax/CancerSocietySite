@@ -21,7 +21,6 @@ const APP_ROUTES: Routes = [{path: '', component: HomeComponent},
   {path: 'ongoing', component: EventsComponent, data: [{id: 2}]},
   {path: 'upcoming', component: EventsComponent, data: [{id: 1}]},
   {path: 'callback', component: CallbackComponent},
-
   {path: 'events', component: EventsComponent}
 ];
 

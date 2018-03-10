@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {EventBean} from './events';
 import {EventsService} from './events.service';
 import {ActivatedRoute} from '@angular/router';
+import {SITEURL} from '../shared/globals';
 
 @Component({
   selector: 'prasun-events',
@@ -24,18 +25,26 @@ export class EventsComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectedDisease(event: Event, disease: EventBean, idx: number) {
+  selectedEvent(event: Event, evBean: EventBean, idx: number) {
     event.preventDefault();
-    this.selectedEvents = disease;
+    this.selectedEvents = evBean;
     this.displayDialog = true;
     console.log('Current Index:' + idx);
   }
 
-  onDetailsShow(disease: EventBean) {
+  onDetailsShow(eventBean: EventBean) {
     const page = this;
-    this.eventService.getData(disease.id, this.thisEventId).subscribe(function (data) {
-      page.selectedEvents = data;
-      console.log('Completed !!!' + data);
+    this.eventService.getData(eventBean.id, this.thisEventId).subscribe(function (data) {
+      page.selectedEvents = data[0];
+      if (!page.selectedEvents.imgUrl) {
+        page.selectedEvents.imgUrl = '';
+      }
+      if (page.selectedEvents.imgUrl !== '') {
+        page.selectedEvents.imgUrl = SITEURL + 'events_image/' + page.selectedEvents.imgUrl;
+      }
+      page.selectedEvents.details = page.selectedEvents.details.replace('src="', 'src="' + SITEURL);
+      page.dialogText = page.selectedEvents.title;
+
     }, function (err) {
       console.error(err);
     }, function () {

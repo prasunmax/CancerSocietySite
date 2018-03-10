@@ -1,2 +1,2 @@
 'use strict';
-export const SITEURL = 'http://sumitacancersociety.org/';
+export const SITEURL = 'http://newadmin.sumitacancersociety.org/';

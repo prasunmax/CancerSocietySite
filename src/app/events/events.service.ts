@@ -29,7 +29,7 @@ export class EventsService {
     if (type === 4) {
       this.eventPath = 'disease/';
     }
-    console.log('Was Here for Members Service!!!');
+    console.log('Was Here for Events Service!!!');
     return this.httpService.getData(this.eventPath + path);
   }
 }

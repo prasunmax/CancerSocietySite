@@ -29,13 +29,13 @@ import {CallbackComponent} from './callback/callback.component';
 import {AuthService} from './auth/auth.service';
 import {AwardsModule} from './awards/awardsModule';
 import {EventsModule} from './events/eventsModule';
+import {OfficeModule} from './office/officeModule';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HomeComponent,
-    OfficeComponent,
     CallbackComponent
   ],
   imports: [
@@ -56,6 +56,7 @@ import {EventsModule} from './events/eventsModule';
     ExclusiveModule,
     EventsModule,
     AwardsModule,
+    OfficeModule,
     BrowserAnimationsModule
   ],
   providers: [MenuService, MemberService, AuthService],

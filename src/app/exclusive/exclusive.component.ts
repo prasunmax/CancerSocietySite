@@ -45,7 +45,7 @@ export class ExclusiveComponent implements OnInit {
             page.width = window.innerWidth;
           }
           page.height = window.innerWidth;
-          console.log(page.width);
+        // console.log(page.width);
           page.finaliseItems();
         }
       );
@@ -53,7 +53,11 @@ export class ExclusiveComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.width = window.innerWidth;
+    if (!window.matchMedia('(max-width: 40em)').matches) {
+      this.width = window.innerWidth * 2 / 5;
+    } else {
+      this.width = window.innerWidth;
+    }
     this.height = window.innerWidth;
     // this.finaliseItems();
     const page = this;
@@ -63,8 +67,8 @@ export class ExclusiveComponent implements OnInit {
       console.log(page.mainText);
       page.headerText = data[0]['exclusive_name'].replace('\\n', '\n');
       page.finaliseItems();
-      console.log(this.headerText);
-      console.log('Completed !!!');
+      // console.log(this.headerText);
+      // console.log('Completed !!!');
     }, function (err) {
       console.error(err);
     }, function () {

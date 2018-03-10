@@ -6,7 +6,7 @@ import 'rxjs/Rx';
 export class NewsService {
   constructor(private httpService: SumitaHttpService) { }
   getData(paperName: String) {
-    console.log('Was Here for Members Service!!!');
+    console.log('Was Here for News Service!!!');
     return this.httpService.getData('newspaper/' + paperName);
   }
 }

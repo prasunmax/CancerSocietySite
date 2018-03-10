@@ -32,23 +32,13 @@ export class MenuComponent implements OnInit {
               {label: 'Upcoming Events ', routerLink: ['/upcoming']},
             ]
           },
+          {label: 'Our Offices', routerLink: ['/office']},
+          {label: 'The Disease', routerLink: ['/disease']},
           {label: 'Members', routerLink: ['/members']},
           {label: 'Members Edit', visible: this.isAuthorised, routerLink: ['/membersE']},
           {label: 'On The News', routerLink: ['/news']},
           {label: 'Awards', routerLink: ['/awards']}
         ]
-      },
-      {
-        label: 'Our Offices', routerLink: ['/office'],
-        icon: 'fa-edit',
-        items: [
-          {label: 'Undo', icon: 'fa-mail-forward'},
-          {label: 'Redo', icon: 'fa-mail-forward'}
-        ]
-      },
-      {
-        label: 'The Disease', routerLink: ['/disease'],
-        icon: 'fa-edit'
       }
     ];
 

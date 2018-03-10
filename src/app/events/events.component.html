@@ -3,7 +3,7 @@
     <div style="padding:4px" class="ui-g-12 ui-md-3">
       <p-panel [header]="event.title" [style]="{'text-align':'center'}">
         <hr class="ui-widget-content" style="border-top:0">
-        <i class="fa fa-search" (click)="selectedDisease($event, event, index)" style="cursor:pointer"></i>
+        <i class="fa fa-search" (click)="selectedEvent($event, event, index)" style="cursor:pointer"></i>
       </p-panel>
     </div>
   </ng-template>
@@ -11,12 +11,12 @@
 
 <p-dialog [header]="dialogText" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
           (onAfterHide)="onDialogHide()" (onShow)="onDetailsShow(selectedEvents)">
-  <ng-template pTemplate="content">
-    <div class="ui-grid ui-grid-responsive ui-grid-pad" *ngIf="selectedEvents"
-         style="font-size:16px;text-align:center;padding:20px">
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-12" style="text-align:center">{{selectedEvents.details | async}}</div>
-      </div>
+  <div class="ui-grid ui-grid-responsive ui-grid-pad ui-g" *ngIf="selectedEvents"
+       style="font-size:16px;text-align:center;padding:20px">
+    <div class="ui-g-12" *ngIf="selectedEvents.imgUrl != ''">
+      <img [src]="selectedEvents.imgUrl"/>
     </div>
-  </ng-template>
+    <br/>
+    <div class="ui-grid-col-12" style="text-align:left" [innerHtml]="selectedEvents.details"></div>
+  </div>
 </p-dialog>

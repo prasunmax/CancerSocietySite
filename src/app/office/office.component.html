@@ -1,3 +1,11 @@
-<p>
-  office works!
-</p>
+<p-dataView [value]="offices" layout="list">
+  <ng-template let-office pTemplate="listItem">
+    <div class="ui-g-12 ui-md-3">
+      <p-panel [header]="office.dist_Name" [style]="{'text-align':'center'}">
+        {{office.title}}
+        <hr class="ui-widget-content" style="border-top:0">
+        <div [innerHtml]="office.det" style="{'overflow': 'hidden'}"></div>
+      </p-panel>
+    </div>
+  </ng-template>
+</p-dataView>

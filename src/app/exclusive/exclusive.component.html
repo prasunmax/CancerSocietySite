@@ -4,15 +4,18 @@
 </div>
 <div class="ui-grid-row">
   <div class="ui-grid-col-1">&nbsp;</div>
-  <div class="ui-grid-col-5 ui-sm-12" STYLE="border: 1px solid">
+  <div class="ui-grid-col-5 ui-sm-12" STYLE="border: 0px solid">
     <div id="OurWork"></div>
   </div>
 
   <div class="ui-grid-col-6 ui-sm-12">
-    <div class="text-center" style="background-color: #2ecc82; border-radius: 20px; padding: 10px;">{{headerText}}</div>
-    <div class="text-justify " [innerHTML]="mainText"
-         style="background-color: #7d73cc; border-radius: 20px; padding: 10px;">
+    <div class="text-center" style="background-color: #2ecc82; padding: 10px;">{{headerText}}</div>
+    <p-scrollPanel [style]="{width: '100%', height: '400px'}" styleClass="custombar1">
 
-    </div>
+      <div class="text-justify " [innerHTML]="mainText"
+           style="background-color: #7d73cc; padding: 10px;">
+
+      </div>
+    </p-scrollPanel>
   </div>
 </div>

@@ -12,7 +12,7 @@ export class ExclusiveService {
 
   getData(index) {
 
-    console.log('Was Here for Exclusive Service!!!');
+    // console.log('Was Here for Exclusive Service!!!');
     this.httpService.getData('exclusive/' + index).subscribe(
       data => this.activeProject.next(data)
     );

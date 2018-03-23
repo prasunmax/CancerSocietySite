@@ -9,7 +9,7 @@ import {
   MenubarModule,
   MenuModule,
   PanelMenuModule,
-  SharedModule
+  SharedModule, SidebarModule
 } from 'primeng/primeng';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {routing} from './app.routes';
@@ -57,6 +57,7 @@ import {OfficeModule} from './office/officeModule';
     EventsModule,
     AwardsModule,
     OfficeModule,
+    SidebarModule,
     BrowserAnimationsModule
   ],
   providers: [MenuService, MemberService, AuthService],

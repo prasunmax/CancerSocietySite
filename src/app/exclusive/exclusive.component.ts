@@ -64,7 +64,7 @@ export class ExclusiveComponent implements OnInit {
     this.exclusiveService.activeProject.subscribe(function (data) {
       page.populateItem(data);
       page.mainText = data[0]['exclusive_details'];
-      console.log(page.mainText);
+      // console.log(page.mainText);
       page.headerText = data[0]['exclusive_name'].replace('\\n', '\n');
       page.finaliseItems();
       // console.log(this.headerText);
@@ -95,7 +95,7 @@ export class ExclusiveComponent implements OnInit {
   }
 
   drawCircles(height) {
-    console.log(this.height * 1 / 2 + ' ' + this.height + ' ' + this.height * 25 / 40);
+    // console.log(this.height * 1 / 2 + ' ' + this.height + ' ' + this.height * 25 / 40);
     this.paper.circle(height * 2 / 3, height / 2, height * 1 / this.xfactor).attr({'hue': .45, 'fill': 'red'});
     this.paper.circle(height * 2 / 3, height / 2, height * 1 / this.yfactor).attr({'hue': .45, 'fill': 'blue'});
   }

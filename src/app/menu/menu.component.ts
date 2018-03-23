@@ -10,34 +10,45 @@ import {AuthService} from '../auth/auth.service';
 })
 export class MenuComponent implements OnInit {
   items: MenuItem[];
+  visibleSidebar1 = false;
+
   private isAuthorised: boolean;
 
   constructor(private menuService: MenuService, public auth: AuthService) {
     auth.handleAuthentication();
   }
 
+  openMenu() {
+    event.preventDefault();
+    this.visibleSidebar1 = true;
+  }
+
+  closeMenu() {
+    this.visibleSidebar1 = false;
+  }
+
   ngOnInit() {
     this.isAuthorised = this.auth.isAuthenticated();
     this.items = [
-      {label: 'Sumita Cancer Society', routerLink: ['']},
+      {label: 'Sumita Cancer Society', routerLink: [''], command : () => this.closeMenu()},
       {
         label: 'Organisation',
         items: [
-          {label: 'Our Exclusive Work ', routerLink: ['/exclusive']},
+          {label: 'Our Exclusive Work ', routerLink: ['/exclusive'], command : () => this.closeMenu()},
           {
             label: 'Events ...',
             icon: 'fa-plus',
             items: [
-              {label: 'On going Events ', routerLink: ['/ongoing']},
-              {label: 'Upcoming Events ', routerLink: ['/upcoming']},
+              {label: 'On going Events ', routerLink: ['/ongoing'], command : () => this.closeMenu()},
+              {label: 'Upcoming Events ', routerLink: ['/upcoming'], command : () => this.closeMenu()},
             ]
           },
-          {label: 'Our Offices', routerLink: ['/office']},
-          {label: 'The Disease', routerLink: ['/disease']},
-          {label: 'Members', routerLink: ['/members']},
-          {label: 'Members Edit', visible: this.isAuthorised, routerLink: ['/membersE']},
-          {label: 'On The News', routerLink: ['/news']},
-          {label: 'Awards', routerLink: ['/awards']}
+          {label: 'Our Offices', routerLink: ['/office'], command : () => this.closeMenu()},
+          {label: 'The Disease', routerLink: ['/disease'], command : () => this.closeMenu()},
+          {label: 'Members', routerLink: ['/members'], command : () => this.closeMenu()},
+          {label: 'Members Edit', visible: this.isAuthorised, routerLink: ['/membersE'], command : () => this.closeMenu()},
+          {label: 'On The News', routerLink: ['/news'], command : () => this.closeMenu()},
+          {label: 'Awards', routerLink: ['/awards'], command : () => this.closeMenu()}
         ]
       }
     ];

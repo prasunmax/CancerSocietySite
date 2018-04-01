@@ -20,7 +20,7 @@ import {DomHandler} from 'primeng/api';
 @NgModule({
   declarations: [HomeComponent, HomeGalleriaComponent
   ],
-  imports: [RouterModule, GalleriaModule, CommonModule, SharedModule, DataGridModule, DialogModule,],
+  imports: [RouterModule, GalleriaModule, CommonModule, SharedModule, DataGridModule, DialogModule],
   providers: [SumitaHttpService, EventsService, DomHandler],
   exports: [HomeComponent]
 })

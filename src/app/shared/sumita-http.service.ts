@@ -5,6 +5,7 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class SumitaHttpService {
+  private worker: Worker;
   url = 'http://app.sumitacancersociety.org/index.php/service/';
   constructor(private http: Http) {
   }

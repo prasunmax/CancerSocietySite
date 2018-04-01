@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, NgZone, OnInit} from '@angular/core';
 
 import { GalleriaModule } from 'primeng/primeng';
+import {EventsService} from '../events/events.service';
+import {EventBean} from '../events/events';
+import {SITEURL} from '../shared/globals';
 
 @Component({
   selector: 'prasun-home',
@@ -26,17 +29,56 @@ export class HomeComponent implements OnInit {
   'This (28/11/2008) awareness camp is our first step forwards the ' +
     'implement action of such an an ambitious dream.</p> ';
   images: any[];
-  constructor() { }
+  private width = 500;
+  private height = 500;
+  private maxWidth = 500;
+  eventDet: EventBean[];
+
+  constructor(private eventService: EventsService, private ngZone: NgZone) {
+    const page = this;
+    window.onresize = (e) => {
+      ngZone.run(() => {
+          if (!window.matchMedia('(max-width: 40em)').matches) {
+            page.width = window.innerWidth * 2 / 5;
+          } else {
+            page.width = window.innerWidth;
+          }
+          page.height = page.width;
+          // console.log(page.width);
+        }
+      );
+    };
+  }
 
   ngOnInit() {
-    this.images = [];
-    this.images.push({ source: 'http://lorempixel.com/600/300/sports/1/Title 1/', alt: 'test1', title: 'Title 1' });
-    this.images.push({ source: 'http://lorempixel.com/600/300/sports/2/Title 2/', alt: 'test2', title: 'Title 2' });
-    this.images.push({ source: 'http://lorempixel.com/600/300/sports/3/Title 3/', alt: 'test3', title: 'Title 3' });
-    this.images.push({ source: 'http://lorempixel.com/600/300/sports/4/Title 4/', alt: 'test4', title: 'Title 4' });
-    this.images.push({ source: 'http://lorempixel.com/600/300/sports/5/Title 5/', alt: 'test5', title: 'Title 5' });
-    this.images.push({ source: 'http://lorempixel.com/600/300/sports/6/Title 6/', alt: 'test6', title: 'Title 6' });
-    this.images.push({ source: 'http://lorempixel.com/600/300/sports/7/Title 7/', alt: 'test7', title: 'Title 7' });
+    const page = this;
+    if (!window.matchMedia('(max-width: 40em)').matches) {
+      this.width = window.innerWidth * 2 / 5;
+    } else {
+      this.width = window.innerWidth;
+    }
+    this.height = page.width;
+    // Welcome images are stored in Events table with event_type 3
+    this.eventService.getData('ALL', 3).subscribe(function (data) {
+      page.eventDet = data;
+      page.images = [];
+      for (const entry of page.eventDet) {
+        console.log(entry);
+        page.images.push({source: SITEURL + 'events_image/' + entry.imgUrl, alt: entry.details, title: entry.title});
+      }
+    }, function (err) {
+      console.error(err);
+    }, function () {
+      console.log('done');
+    });
+    // this.images = [];
+    // this.images.push({ source: 'http://lorempixel.com/600/300/sports/1/Title 1/', alt: 'test1', title: 'Title 1' });
+    // this.images.push({ source: 'http://lorempixel.com/600/300/sports/2/Title 2/', alt: 'test2', title: 'Title 2' });
+    // this.images.push({ source: 'http://lorempixel.com/600/300/sports/3/Title 3/', alt: 'test3', title: 'Title 3' });
+    // this.images.push({ source: 'http://lorempixel.com/600/300/sports/4/Title 4/', alt: 'test4', title: 'Title 4' });
+    // this.images.push({ source: 'http://lorempixel.com/600/300/sports/5/Title 5/', alt: 'test5', title: 'Title 5' });
+    // this.images.push({ source: 'http://lorempixel.com/600/300/sports/6/Title 6/', alt: 'test6', title: 'Title 6' });
+    // this.images.push({ source: 'http://lorempixel.com/600/300/sports/7/Title 7/', alt: 'test7', title: 'Title 7' });
   }
 
   currentImage(evImg) {

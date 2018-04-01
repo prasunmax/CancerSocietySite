@@ -16,8 +16,6 @@ import {routing} from './app.routes';
 import {RouterModule} from '@angular/router';
 
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
-import {OfficeComponent} from './office/office.component';
 import {MenuComponent} from './menu/menu.component';
 
 import {MemberService} from './members/member.service';
@@ -30,12 +28,12 @@ import {AuthService} from './auth/auth.service';
 import {AwardsModule} from './awards/awardsModule';
 import {EventsModule} from './events/eventsModule';
 import {OfficeModule} from './office/officeModule';
+import {HomeModule} from './home/homeModule';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    HomeComponent,
     CallbackComponent
   ],
   imports: [
@@ -57,6 +55,7 @@ import {OfficeModule} from './office/officeModule';
     EventsModule,
     AwardsModule,
     OfficeModule,
+    HomeModule,
     SidebarModule,
     BrowserAnimationsModule
   ],

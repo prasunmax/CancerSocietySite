@@ -29,8 +29,8 @@ export class HomeComponent implements OnInit {
   'This (28/11/2008) awareness camp is our first step forwards the ' +
     'implement action of such an an ambitious dream.</p> ';
   images: any[];
-  private width = 500;
-  private height = 500;
+  width = 500;
+  height = 500;
   private maxWidth = 500;
   eventDet: EventBean[];
 

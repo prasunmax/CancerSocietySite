@@ -4,7 +4,6 @@
 
 
 import {NgModule} from '@angular/core';
-import {SumitaHttpService} from '../shared/sumita-http.service';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {AccordionModule, DataGridModule, DialogModule, PanelModule, SharedModule} from 'primeng/primeng';
@@ -14,7 +13,7 @@ import {DiseaseService} from './disease.service';
 @NgModule({
   declarations: [DiseaseComponent],
   imports: [RouterModule, AccordionModule, CommonModule, SharedModule, DataGridModule, DialogModule, PanelModule],
-  providers: [SumitaHttpService, DiseaseService],
+  providers: [DiseaseService],
   exports: [DiseaseComponent]
 })
 

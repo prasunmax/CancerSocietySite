@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {SumitaHttpService} from '../shared/sumita-http.service';
 import 'rxjs/Rx';
+import {NewHttpService} from '../shared/new-http.service';
 
 @Injectable()
 export class DiseaseService {
-  constructor(private httpService: SumitaHttpService) {
+  constructor(private httpService: NewHttpService) {
   }
 
   getData(path: string) {

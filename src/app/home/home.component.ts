@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
       page.eventDet = data;
       page.images = [];
       for (const entry of page.eventDet) {
-        console.log(entry);
+        // console.log(entry);
         page.images.push({source: SITEURL + 'events_image/' + entry.imgUrl, alt: entry.details, title: entry.title});
       }
     }, function (err) {

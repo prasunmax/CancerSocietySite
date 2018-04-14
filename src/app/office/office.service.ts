@@ -1,13 +1,11 @@
 import {Injectable} from '@angular/core';
-import {SumitaHttpService} from '../shared/sumita-http.service';
-import {Response} from '@angular/http';
-import {ReplaySubject} from 'rxjs/Rx';
+import {NewHttpService} from '../shared/new-http.service';
 
 @Injectable()
 export class OfficeService {
   pageLayout = 'list';
 
-  constructor(private httpService: SumitaHttpService) {
+  constructor(private httpService: NewHttpService) {
   }
 
   getData() {

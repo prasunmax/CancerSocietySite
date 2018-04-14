@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
 
   private isAuthorised: boolean;
 
-  constructor(private menuService: MenuService, public auth: AuthService) {
+  constructor(public auth: AuthService) {
     auth.handleAuthentication();
   }
 
@@ -32,7 +32,7 @@ export class MenuComponent implements OnInit {
     this.items = [
       {label: 'Sumita Cancer Society', routerLink: [''], command : () => this.closeMenu()},
       {
-        label: 'Organisation',
+        label: 'About...',
         items: [
           {label: 'Our Exclusive Work ', routerLink: ['/exclusive'], command : () => this.closeMenu()},
           {

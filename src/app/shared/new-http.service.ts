@@ -1,20 +1,19 @@
 import {Injectable} from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import {Observable} from 'rxjs/Rx';
 import 'rxjs/Rx';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
-export class SumitaHttpService {
+export class NewHttpService {
   private worker: Worker;
   url = 'http://app.sumitacancersociety.org/index.php/service/';
-  constructor(private http: Http) {
+
+  constructor(private http: HttpClient) {
   }
 
   getData(path) {
     console.log('In http Service' + path);
-    return this.http.get(this.url + path)
-      .map((data: Response) => data.json()).
-      catch(this.handleError);
+    return this.http.get<any>(this.url + path);
     /*return this.http.get("http://sumitacancersociety.org/service" + path)
       .map((data:Response) => data.json());*/
   }
@@ -29,24 +28,20 @@ export class SumitaHttpService {
 
   postData(path, inpBody) {
     const body = JSON.stringify(inpBody);
-    const headers = new Headers();
+    const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://sumitacancersociety.org/service' + path, body, {
+    return this.http.post<any>('http://sumitacancersociety.org/service' + path, body, {
       headers: headers
-    })
-      .map((data: Response) => data.json())
-      .catch(this.handleError);
+    });
   }
 
   putData(path, inpBody) {
     const body = JSON.stringify(inpBody);
-    const headers = new Headers();
+    const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.put('http://sumitacancersociety.org/service' + path, body, {
+    return this.http.put<any>('http://sumitacancersociety.org/service' + path, body, {
       headers: headers
-    })
-      .map((data: Response) => data.json())
-      .catch(this.handleError);
+    });
   }
 
   private handleError(error: any) {

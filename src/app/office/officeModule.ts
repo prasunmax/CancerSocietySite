@@ -18,7 +18,7 @@ import {PanelModule} from 'primeng/panel';
 @NgModule({
   declarations: [OfficeComponent],
   imports: [RouterModule, CommonModule, SharedModule, DataViewModule, PanelModule, ScrollPanelModule],
-  providers: [SumitaHttpService, OfficeService],
+  providers: [OfficeService],
   exports: [OfficeComponent]
 })
 

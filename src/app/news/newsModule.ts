@@ -4,7 +4,6 @@
 
 
 import {NgModule} from '@angular/core';
-import {SumitaHttpService} from '../shared/sumita-http.service';
 import {RouterModule} from '@angular/router';
 import {NewsService} from './news.service';
 import {NewsComponent} from './news.component';
@@ -20,7 +19,7 @@ import {
   declarations: [NewsComponent
   ],
   imports: [RouterModule, AccordionModule, CommonModule, SharedModule, DataGridModule, DialogModule, TabViewModule, ScrollPanelModule],
-  providers: [SumitaHttpService, NewsService],
+  providers: [NewsService],
   exports: [NewsComponent]
 })
 

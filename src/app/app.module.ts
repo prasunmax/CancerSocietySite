@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
 import {MemberModule} from './members/memberModule';
 import {
   AccordionModule,
@@ -29,6 +28,8 @@ import {AwardsModule} from './awards/awardsModule';
 import {EventsModule} from './events/eventsModule';
 import {OfficeModule} from './office/officeModule';
 import {HomeModule} from './home/homeModule';
+import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {HomeModule} from './home/homeModule';
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     MenubarModule,
     GalleriaModule,
     routing,

@@ -4,7 +4,6 @@
 
 
 import {NgModule} from '@angular/core';
-import {SumitaHttpService} from '../shared/sumita-http.service';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {
@@ -20,7 +19,7 @@ import {ExclusiveService} from './exclusive.service';
   declarations: [ExclusiveComponent
   ],
   imports: [RouterModule, AccordionModule, CommonModule, SharedModule, DataGridModule, DialogModule, TabViewModule, ScrollPanelModule],
-  providers: [SumitaHttpService, ExclusiveService],
+  providers: [ExclusiveService],
   exports: [ExclusiveComponent]
 })
 

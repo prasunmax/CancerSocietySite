@@ -3,6 +3,7 @@ import {EventBean} from './events';
 import {EventsService} from './events.service';
 import {ActivatedRoute} from '@angular/router';
 import {SITEURL} from '../shared/globals';
+import {DialogService} from './dialog.service';
 
 @Component({
   selector: 'prasun-events',
@@ -14,22 +15,62 @@ export class EventsComponent implements OnInit {
   eventDet: EventBean[];
   selectedEvents: EventBean;
   displayDialog: boolean;
-  index: number;
+  index = 0;
   thisEventId: number;
 
-  constructor(private eventService: EventsService, private route: ActivatedRoute) {
+  constructor(private eventService: EventsService, private route: ActivatedRoute, private dialogService: DialogService) {
     this.displayDialog = false;
     this.thisEventId = route.snapshot.data[0]['id'];
   }
 
   ngOnInit() {
+    this.dialogService.selEvent.subscribe(ev => {
+      if (ev === 1) {
+        this.index++;
+      }
+      if (ev === 2) {
+        this.index--;
+      }
+      this.selectedEvents = this.eventDet[this.index];
+      this.onDetailsShow(this.selectedEvents);
+      this.dialogService.getEventAvailable(this.index > 0, this.index < this.eventDet.length);
+    });
   }
 
   selectedEvent(event: Event, evBean: EventBean, idx: number) {
     event.preventDefault();
     this.selectedEvents = evBean;
     this.displayDialog = true;
-    console.log('Current Index:' + idx);
+
+    this.index = this.eventDet.indexOf(evBean);
+    this.dialogService.getEventAvailable(this.index > 0, this.index < this.eventDet.length);
+    console.log('Current Index:' + this.index);
+  }
+
+  hasPrevEvent() {
+    if (this.index === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  hasNextEvent() {
+    if (this.index === this.eventDet.length - 1) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  nextEvent() {
+    this.index++;
+    this.selectedEvents = this.eventDet[this.index];
+  }
+
+  prevEvent() {
+    this.index--;
+    this.selectedEvents = this.eventDet[this.index];
   }
 
   onDetailsShow(eventBean: EventBean) {

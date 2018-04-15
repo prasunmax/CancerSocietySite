@@ -12,13 +12,14 @@ import {OfficeComponent} from './office.component';
 import {OfficeService} from './office.service';
 import {DataViewModule} from 'primeng/dataview';
 import {PanelModule} from 'primeng/panel';
+import {NewHttpService} from "../shared/new-http.service";
 
 // import {editorModule} from "../tiny-mce-editor/editorModule";
 
 @NgModule({
   declarations: [OfficeComponent],
   imports: [RouterModule, CommonModule, SharedModule, DataViewModule, PanelModule, ScrollPanelModule],
-  providers: [OfficeService],
+  providers: [NewHttpService, OfficeService],
   exports: [OfficeComponent]
 })
 

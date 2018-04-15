@@ -12,14 +12,14 @@ import {
 } from 'primeng/primeng';
 import {ExclusiveComponent} from './exclusive.component';
 import {ExclusiveService} from './exclusive.service';
+import {NewHttpService} from '../shared/new-http.service';
 
 // import {editorModule} from "../tiny-mce-editor/editorModule";
 
 @NgModule({
-  declarations: [ExclusiveComponent
-  ],
+  declarations: [ExclusiveComponent],
   imports: [RouterModule, AccordionModule, CommonModule, SharedModule, DataGridModule, DialogModule, TabViewModule, ScrollPanelModule],
-  providers: [ExclusiveService],
+  providers: [ExclusiveService, NewHttpService],
   exports: [ExclusiveComponent]
 })
 

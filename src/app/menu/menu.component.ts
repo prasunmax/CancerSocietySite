@@ -13,13 +13,14 @@ export class MenuComponent implements OnInit {
   visibleSidebar1 = false;
 
   private isAuthorised: boolean;
+  private e: any;
 
   constructor(public auth: AuthService) {
     auth.handleAuthentication();
   }
 
-  openMenu() {
-    event.preventDefault();
+  openMenu(e) {
+    e.preventDefault();
     this.visibleSidebar1 = true;
   }
 

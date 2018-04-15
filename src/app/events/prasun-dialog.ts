@@ -55,11 +55,11 @@ export class PrasunDialogComponent extends Dialog implements OnInit {
 
   // 1 Next
   // 2 Prev
-  next(ele) {
+  next() {
     this.dialogService.setSelType(1);
   }
 
-  prev(ele) {
+  prev() {
     this.dialogService.setSelType(2);
   }
 }

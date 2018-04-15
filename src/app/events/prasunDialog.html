@@ -7,9 +7,9 @@
      role="dialog" [attr.aria-labelledby]="id + '-label'">
   <div class="ui-lightbox-content-wrapper">
     <a class="ui-state-default ui-lightbox-nav-left ui-corner-right" [style.zIndex]="999"
-       (click)="prev(curIndex)"
+       (click)="prev()"
        [ngClass]="{'ui-helper-hidden':!leftVisible}"><span class="fa fa-fw fa-caret-left"></span></a>
-    <div [style.zIndex]="zindex">
+    <div [style.zIndex]="900">
       <div #titlebar class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"
            (mousedown)="initDrag($event)" *ngIf="showHeader">
         <span [attr.id]="id + '-label'" class="ui-dialog-title" *ngIf="header">{{header}}</span>
@@ -31,8 +31,8 @@
            style="z-index: 90;"
            (mousedown)="initResize($event)"></div>
     </div>
-    <a class="ui-state-default ui-lightbox-nav-right ui-corner-left" [style.zIndex]="zindex + 1"
-       (click)="next(curIndex)"
+    <a class="ui-state-default ui-lightbox-nav-right ui-corner-left" [style.zIndex]="999"
+       (click)="next()"
        [ngClass]="{'ui-helper-hidden':!rightVisible}"><span class="fa fa-fw fa-caret-right"></span></a>
   </div>
 

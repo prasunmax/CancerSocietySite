@@ -33,11 +33,11 @@ export class MembersComponent implements OnInit {
     */.subscribe(function (data) {
         page.members = data;
 
-        console.log("Completed !!!" + page.members);
+      console.log('Completed !!!' + page.members);
       }, function (err) {
         console.error(err);
       }, function () {
-        console.info('done' + page.members);
+      console.log('done' + page.members);
       });
   }
 

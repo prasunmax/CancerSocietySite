@@ -4,18 +4,21 @@ import 'rxjs/Rx';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
-export class NewHttpService {
+export class NewHttpService<T> {
   private worker: Worker;
   url = 'http://app.sumitacancersociety.org/index.php/service/';
 
   constructor(private http: HttpClient) {
   }
 
-  getData(path) {
+  getData(path): Observable<T> {
     console.log('In http Service' + path);
-    return this.http.get<any>(this.url + path);
+    return this.http.get(this.url + path, {
+      observe: 'body',
+      responseType: 'json'
+    });
     /*return this.http.get("http://sumitacancersociety.org/service" + path)
-      .map((data:Response) => data.json());*/
+      .map((data) => data.json());*/
   }
 
   insertData(path, inpBody) {

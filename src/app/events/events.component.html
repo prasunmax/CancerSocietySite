@@ -10,7 +10,8 @@
 </p-dataGrid>
 
 <prasun-dialog [header]="dialogText" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
-               (onAfterHide)="onDialogHide()" (onShow)="onDetailsShow(selectedEvents)">
+               (onAfterHide)="onDialogHide()" (onShow)="onDetailsShow(selectedEvents)" [minY]="50"
+               [dismissableMask]="true">
   <div class="ui-grid ui-grid-responsive ui-grid-pad ui-g" *ngIf="selectedEvents"
        style="font-size:16px;text-align:center;padding:20px">
     <div class="ui-g-12" *ngIf="selectedEvents.imgUrl != ''">

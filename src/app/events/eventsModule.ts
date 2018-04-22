@@ -10,16 +10,18 @@ import {CommonModule} from '@angular/common';
 import {DataGridModule, DialogModule, PanelModule, SharedModule} from 'primeng/primeng';
 import {EventsComponent} from './events.component';
 import {EventsService} from './events.service';
-import {PrasunDialogComponent} from './prasun-dialog';
+import {PrasunDialogComponent} from '../customDialog/prasun-dialog';
 import {DomHandler} from 'primeng/api';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DialogService} from './dialog.service';
+import {DialogService} from '../customDialog/dialog.service';
+import {CustomDialogModule} from '../customDialog/custDialog';
 
 @NgModule({
-  declarations: [EventsComponent, PrasunDialogComponent],
-  imports: [RouterModule, CommonModule, SharedModule, DataGridModule, DialogModule, PanelModule, BrowserAnimationsModule],
+  declarations: [EventsComponent],
+  imports: [RouterModule, CommonModule, SharedModule, DataGridModule, DialogModule, PanelModule, BrowserAnimationsModule,
+    CustomDialogModule],
   providers: [SumitaHttpService, EventsService, DomHandler, DialogService],
-  exports: [EventsComponent, PrasunDialogComponent]
+  exports: [EventsComponent]
 })
 
 export class EventsModule {

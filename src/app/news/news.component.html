@@ -28,8 +28,8 @@
     </p-dataGrid>
   </p-tabPanel>
 </p-tabView>
-<p-dialog header="News Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
-          (onAfterHide)="onDialogHide()">
+<prasun-dialog header="News Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
+               (onAfterHide)="onDialogHide()">
   <div class="ui-grid ui-grid-responsive ui-grid-pad" *ngIf="selectedNews"
        style="font-size:16px;text-align:center;padding:20px">
     <div class="ui-grid-row">
@@ -45,4 +45,4 @@
         src="http://sumitacancersociety.org/newspaper/{{selectedNews.nmUrl}}"></div>
     </div>
   </div>
-</p-dialog>
+</prasun-dialog>

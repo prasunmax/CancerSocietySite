@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {NewsService} from './news.service';
 import {FormattedNews, News} from './news';
 import {SITEURL} from '../shared/globals';
+import {DialogService} from '../customDialog/dialog.service';
+import {identity} from 'rxjs/util/identity';
 
 
 @Component({
@@ -17,13 +19,13 @@ export class NewsComponent implements OnInit {
   selectedNews: News;
   displayDialog: boolean;
 
-  constructor(private newsService: NewsService) {
+  constructor(private newsService: NewsService, private dialogService: DialogService) {
   }
 
   formatNews() {
     const page = this;
     this.formattedNews = new Array<FormattedNews>();
-    let previd: string = '';
+    let previd = '';
     let thisformattedNews: FormattedNews;
     this.newspaper.forEach(function (item: News) {
       if (item.ID !== previd) {
@@ -39,6 +41,17 @@ export class NewsComponent implements OnInit {
 
   ngOnInit() {
     const page = this;
+    this.dialogService.selEvent.subscribe(ev => {
+      if (ev === 1) {
+        page.index++;
+      }
+      if (ev === 2) {
+        page.index--;
+      }
+      page.selectedNews = page.newspaper[page.index];
+      // this.onDetailsShow(this.selectedNews);
+      page.dialogService.getEventAvailable(page.index > 0, page.index < page.newspaper.length - 1);
+    });
     this.newsService.getData('ALL').subscribe(function (data) {
       page.newspaper = data;
       page.formatNews();
@@ -49,6 +62,8 @@ export class NewsComponent implements OnInit {
     event.preventDefault();
     this.selectedNews = paper;
     this.displayDialog = true;
+    this.index = this.newspaper.indexOf(paper);
+    this.dialogService.getEventAvailable(this.index > 0, this.index < this.newspaper.length - 1);
     console.log('Current Index:' + idx);
   }
 

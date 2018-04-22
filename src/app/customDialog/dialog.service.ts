@@ -1,16 +1,14 @@
 import {EventEmitter, Injectable, Output} from '@angular/core';
-import {EventBean} from './events';
+import {EventBean} from '../events/events';
 
 @Injectable()
 export class DialogService {
 
   @Output() isPrevAvailable: EventEmitter<boolean> = new EventEmitter();
   @Output() isNextAvailable: EventEmitter<boolean> = new EventEmitter();
-  @Output() nextEvent: EventEmitter<EventBean> = new EventEmitter();
   @Output() selEvent: EventEmitter<Number> = new EventEmitter();
   prevAvailable: boolean;
   nextAvailable: boolean;
-  ev: EventBean;
   selType: Number = 0;
 
   constructor() {

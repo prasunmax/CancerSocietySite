@@ -1,7 +1,7 @@
 import {Component, DoCheck, ElementRef, EventEmitter, Input, NgZone, OnInit, Output, Renderer2} from '@angular/core';
 import {Dialog} from 'primeng/dialog';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import {EventBean} from './events';
+import {EventBean} from '../events/events';
 import {DialogService} from './dialog.service';
 import {DomHandler} from 'primeng/api';
 
@@ -42,9 +42,6 @@ export class PrasunDialogComponent extends Dialog implements OnInit {
   }
 
   ngOnInit() {
-    this.dialogService.nextEvent.subscribe(ev => {
-      this.thisEvent = ev;
-    });
     this.dialogService.isNextAvailable.subscribe(ev => {
       this.rightVisible = ev;
     });

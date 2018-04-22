@@ -12,13 +12,14 @@ import {
   AccordionModule, DataGridModule, DialogModule, ScrollPanelModule, SharedModule,
   TabViewModule
 } from 'primeng/primeng';
+import {CustomDialogModule} from '../customDialog/custDialog';
 
 // import {editorModule} from "../tiny-mce-editor/editorModule";
 
 @NgModule({
-  declarations: [NewsComponent
-  ],
-  imports: [RouterModule, AccordionModule, CommonModule, SharedModule, DataGridModule, DialogModule, TabViewModule, ScrollPanelModule],
+  declarations: [NewsComponent],
+  imports: [RouterModule, AccordionModule, CommonModule, SharedModule, DataGridModule, DialogModule, TabViewModule,
+    ScrollPanelModule, CustomDialogModule],
   providers: [NewsService],
   exports: [NewsComponent]
 })

@@ -10,6 +10,7 @@ import {CallbackComponent} from './callback/callback.component';
 import {AwardsComponent} from './awards/awards.component';
 
 const APP_ROUTES: Routes = [{path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'members', component: MembersComponent, children: MEMBER_ROUTES},
   {path: 'membersE', component: MembersComponent, children: MEMBER_ROUTES},
   {path: 'news', component: NewsComponent},

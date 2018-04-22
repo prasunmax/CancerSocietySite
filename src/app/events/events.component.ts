@@ -3,7 +3,7 @@ import {EventBean} from './events';
 import {EventsService} from './events.service';
 import {ActivatedRoute} from '@angular/router';
 import {SITEURL} from '../shared/globals';
-import {DialogService} from './dialog.service';
+import {DialogService} from '../customDialog/dialog.service';
 
 @Component({
   selector: 'prasun-events',
@@ -33,7 +33,7 @@ export class EventsComponent implements OnInit {
       }
       this.selectedEvents = this.eventDet[this.index];
       this.onDetailsShow(this.selectedEvents);
-      this.dialogService.getEventAvailable(this.index > 0, this.index < this.eventDet.length);
+      this.dialogService.getEventAvailable(this.index > 0, this.index < this.eventDet.length - 1);
     });
   }
 
@@ -43,7 +43,7 @@ export class EventsComponent implements OnInit {
     this.displayDialog = true;
 
     this.index = this.eventDet.indexOf(evBean);
-    this.dialogService.getEventAvailable(this.index > 0, this.index < this.eventDet.length);
+    this.dialogService.getEventAvailable(this.index > 0, this.index < this.eventDet.length - 1);
     console.log('Current Index:' + this.index);
   }
 

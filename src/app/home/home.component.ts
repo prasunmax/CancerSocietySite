@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit {
     }, function (err) {
       console.error(err);
     }, function () {
-      console.log('done');
+      // console.log('done');
     });
     // this.images = [];
     // this.images.push({ source: 'http://lorempixel.com/600/300/sports/1/Title 1/', alt: 'test1', title: 'Title 1' });

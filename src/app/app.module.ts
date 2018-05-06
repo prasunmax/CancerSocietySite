@@ -28,8 +28,9 @@ import {AwardsModule} from './awards/awardsModule';
 import {EventsModule} from './events/eventsModule';
 import {OfficeModule} from './office/officeModule';
 import {HomeModule} from './home/homeModule';
-import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
+import {PrasunSideBarModule} from './sidebar/sidebar';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import {HttpClientModule} from '@angular/common/http';
     DiseaseModule,
     ExclusiveModule,
     EventsModule,
+    PrasunSideBarModule,
     AwardsModule,
     OfficeModule,
     HomeModule,

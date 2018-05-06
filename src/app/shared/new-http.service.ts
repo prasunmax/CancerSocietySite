@@ -4,14 +4,14 @@ import 'rxjs/Rx';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
-export class NewHttpService<T> {
+export class NewHttpService {
   private worker: Worker;
   url = 'http://app.sumitacancersociety.org/index.php/service/';
 
   constructor(private http: HttpClient) {
   }
 
-  getData(path): Observable<T> {
+  getData(path): Observable<any> {
     console.log('In http Service' + path);
     return this.http.get(this.url + path, {
       observe: 'body',

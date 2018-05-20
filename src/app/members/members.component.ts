@@ -1,8 +1,8 @@
-import { SumitaHttpService } from './../shared/sumita-http.service';
 import { Component, OnInit } from '@angular/core';
 import { DataListModule } from 'primeng/primeng';
 import { MemberService } from './member.service';
 import { Member } from './member';
+import {NewHttpService} from '../shared/new-http.service';
 
 @Component({
   selector: 'prasun-members',
@@ -16,7 +16,7 @@ export class MembersComponent implements OnInit {
 
   displayDialog: boolean;
 
-  constructor(private memberService: MemberService, private httpService: SumitaHttpService) {
+  constructor(private memberService: MemberService, private httpService: NewHttpService) {
     this.memberService.setData(0);
   }
 

@@ -3,7 +3,7 @@ import {NewsService} from './news.service';
 import {FormattedNews, News} from './news';
 import {SITEURL} from '../shared/globals';
 import {DialogService} from '../customDialog/dialog.service';
-import {identity} from 'rxjs/util/identity';
+import {identity} from 'rxjs';
 
 
 @Component({

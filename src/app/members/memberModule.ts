@@ -4,8 +4,6 @@
 
 
 import { NgModule } from '@angular/core';
-import { SumitaHttpService } from '../shared/sumita-http.service';
-// import {editorModule} from "../tiny-mce-editor/editorModule";
 import { MemberService } from './member.service';
 import { MembersComponent } from './members.component';
 import { MemberListComponent } from './member-list/member-list.component';

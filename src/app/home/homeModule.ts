@@ -4,7 +4,6 @@
 
 
 import {NgModule} from '@angular/core';
-import {SumitaHttpService} from '../shared/sumita-http.service';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {
@@ -14,6 +13,7 @@ import {HomeComponent} from './home.component';
 import {EventsService} from '../events/events.service';
 import {HomeGalleriaComponent} from './home-galleria';
 import {DomHandler} from 'primeng/api';
+import {NewHttpService} from '../shared/new-http.service';
 
 // import {editorModule} from "../tiny-mce-editor/editorModule";
 
@@ -21,7 +21,7 @@ import {DomHandler} from 'primeng/api';
   declarations: [HomeComponent, HomeGalleriaComponent
   ],
   imports: [RouterModule, GalleriaModule, CommonModule, SharedModule, DataGridModule, DialogModule],
-  providers: [SumitaHttpService, EventsService, DomHandler],
+  providers: [NewHttpService, EventsService, DomHandler],
   exports: [HomeComponent]
 })
 

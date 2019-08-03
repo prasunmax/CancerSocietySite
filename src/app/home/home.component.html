@@ -14,27 +14,11 @@
     </div>
 
     <div class="ui-g-6 ui-sm-12" style="overflow:hidden">
-      <div class="ui-g-12">
-        <div class="ui-g-6">
-          <label>Size <select>
-            <option value="husker">Small</option>
-            <option value="starbuck">Medium</option>
-            <option value="hotdog">Large</option>
-            <option value="apollo">Yeti</option>
-          </select>
-          </label>
-        </div>
-        <div class="ui-g-3">
-          <div class="columns">
-            <label for="middle-label">Quantity</label>
-          </div>
-          <div class="columns">
-            <input type="text" id="middle-label" placeholder="One fish two fish">
-          </div>
-        </div>
-        <div class="ui-g-3">
-          <a href="#" class="button expanded">Buy Now</a>
-        </div>
+      <div class="ui-g-6">
+        <a href="#" class="button expanded" (click)="showDialog(1)">President Speech</a>
+      </div>
+      <div class="ui-g-6">
+        <a href="#" class="button expanded" (click)="showDialog(2)">Secretary Speech</a>
       </div>
       <div class="ui-g-12">
         <div class="ui-g">
@@ -48,3 +32,10 @@
     <div class="ui-lg-1 hide-for-small-only"> &nbsp;</div>
   </div>
 </div>
+<p-dialog [(visible)]="display" (onHide)="hideDialog()">
+  <div style="text-align: center">
+    <img [src]="imgSrc" style="text-align: center"/>
+  </div>
+  <div [innerHtml]="dlgTxt"></div>
+</p-dialog>
+

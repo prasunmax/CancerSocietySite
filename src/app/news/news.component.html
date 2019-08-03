@@ -1,6 +1,6 @@
 <p-tabView>
   <p-tabPanel header="Publisher">
-    <p-accordion [lazy]="true" (onOpen)="onTabOpen($event,'')">
+    <p-accordion (onOpen)="onTabOpen($event,'')">
       <ng-template ngFor let-item [ngForOf]="formattedNews" let-i="item">
         <p-accordionTab>
           <p-header>

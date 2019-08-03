@@ -1,4 +1,4 @@
-import {Component, DoCheck, ElementRef, EventEmitter, Input, NgZone, OnInit, Output, Renderer2} from '@angular/core';
+import {Component, ElementRef, NgZone, OnInit, Renderer2} from '@angular/core';
 import {Dialog} from 'primeng/dialog';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {EventBean} from '../events/events';
@@ -38,7 +38,7 @@ export class PrasunDialogComponent extends Dialog implements OnInit {
   constructor(private dialogService: DialogService, el: ElementRef, domHandler: DomHandler,
               renderer: Renderer2, zone: NgZone) {
     // noinspection JSAnnotator
-    super(el, domHandler, renderer, zone);
+    super(el, renderer, zone);
   }
 
   ngOnInit() {

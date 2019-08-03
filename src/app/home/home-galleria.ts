@@ -1,12 +1,13 @@
 import {Galleria} from 'primeng/primeng';
 import {Component, ElementRef} from '@angular/core';
 
+
 @Component({
   selector: 'prasun-galleria',
   templateUrl: './galleria.html',
 })
 export class HomeGalleriaComponent extends Galleria {
-
+  private domHandler: any;
   render() {
     this.panels = this.domHandler.find(this.panelWrapper, 'li.ui-galleria-panel');
     if (this.showFilmstrip) {

@@ -1,12 +1,17 @@
+<!--
 <div class="hide-for-small-only">
   <p-menubar [model]="items"></p-menubar>
 </div>
-<div class="show-for-small-only">
+-->
+<div>
 
-  <div class="fa fa-bars"
-       style="text-align: center; vertical-align: middle; width: 100%; height:46px; background-color: slategrey; "
+  <div class="fa "
+       style="text-align: center; display: table;; width: 100%; height:46px; background-color: slategrey;"
        (click)="openMenu($event)">
     <img src="http://newadmin.sumitacancersociety.org/image/sumita_logo_20.jpg" align="left">
+    <div style="display: table-cell; vertical-align: middle;font-size: 20px;color: ghostwhite;">
+      Cancer HelpLine: +91 9733030723
+    </div>
   </div>
 
   <prasun-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">

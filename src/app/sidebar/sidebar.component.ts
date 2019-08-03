@@ -11,7 +11,7 @@ import {DomHandler} from 'primeng/components/dom/domhandler';
 export class PrasunSidebarComponent extends Sidebar implements OnInit {
 
   constructor(el: ElementRef, domHandler: DomHandler, renderer: Renderer2, zone: NgZone) {
-    super(el, domHandler, renderer);
+    super(el, renderer);
   }
 
   ngOnInit() {

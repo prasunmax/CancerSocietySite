@@ -12,8 +12,9 @@ import { MemberDetailComponent } from './member-detail/member-detail.component';
 import { MemberStartComponent } from './member-start.component';
 import { MemberItemComponent } from './member-list/member-item.component';
 import { RouterModule } from '@angular/router';
-import { DataListModule, DialogModule } from 'primeng/primeng';
+import { DataViewModule } from 'primeng/dataview';
 import { CommonModule } from '@angular/common';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [MembersComponent,
@@ -25,7 +26,7 @@ import { CommonModule } from '@angular/common';
     MemberStartComponent,
     MemberItemComponent,
   ],
-  imports: [RouterModule, DataListModule, CommonModule, DialogModule],
+  imports: [RouterModule, DataViewModule, CommonModule, DialogModule],
   providers: [MemberService],
   exports: [MembersComponent]
 })

@@ -1,6 +1,5 @@
 import {Component, NgZone, OnInit} from '@angular/core';
 
-import {GalleriaModule} from 'primeng/primeng';
 import {EventsService} from '../events/events.service';
 import {EventBean} from '../events/events';
 import {SITEURL} from '../shared/globals';

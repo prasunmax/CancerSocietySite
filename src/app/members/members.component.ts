@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataListModule } from 'primeng/primeng';
+import {DataViewModule} from 'primeng/dataview';
 import { MemberService } from './member.service';
 import { Member } from './member';
 import {NewHttpService} from '../shared/new-http.service';

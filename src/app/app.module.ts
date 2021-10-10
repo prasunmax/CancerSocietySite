@@ -2,14 +2,15 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {MemberModule} from './members/memberModule';
-import {
-  AccordionModule,
-  GalleriaModule,
-  MenubarModule,
-  MenuModule,
-  PanelMenuModule,
-  SharedModule, SidebarModule
-} from 'primeng/primeng';
+
+import {AccordionModule} from 'primeng/accordion';
+import {MenubarModule} from 'primeng/menubar';
+import {MenuModule} from 'primeng/menu';
+import {PanelMenuModule} from 'primeng/panelmenu';
+import {SidebarModule} from 'primeng/sidebar';
+import {GalleriaModule} from 'primeng/galleria';
+import { SharedModule } from 'primeng/api';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {routing} from './app.routes';
 import {RouterModule} from '@angular/router';
@@ -30,7 +31,7 @@ import {OfficeModule} from './office/officeModule';
 import {HomeModule} from './home/homeModule';
 import {HttpClientModule} from '@angular/common/http';
 import {PrasunSideBarModule} from './sidebar/sidebar';
-import {HttpModule} from '@angular/http';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import {HttpModule} from '@angular/http';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     HttpClientModule,
     MenubarModule,
     GalleriaModule,

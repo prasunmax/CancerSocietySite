@@ -1,4 +1,4 @@
-<p-dataGrid [value]="diseases" [lazy]="true" (onLazyLoad)="loadData($event)">
+<p-dataView [value]="diseases" [lazy]="true" (onLazyLoad)="loadData($event)">
   <ng-template let-disease pTemplate="body">
     <div style="padding:4px" class="ui-g-12 ui-md-3">
       <p-panel [header]="disease.title" [style]="{'text-align':'center'}">
@@ -7,7 +7,7 @@
       </p-panel>
     </div>
   </ng-template>
-</p-dataGrid>
+</p-dataView>
 
 <p-dialog header="Disease Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
           (onAfterHide)="onDialogHide()" (onShow)="onDetailsShow(selectedDiseases)">

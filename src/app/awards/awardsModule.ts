@@ -6,13 +6,20 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
-import {AccordionModule, CarouselModule, DataGridModule, GrowlModule, SharedModule} from 'primeng/primeng';
+import {ToastModule} from 'primeng/toast';
 import {AwardsComponent} from './awards.component';
 import {NewHttpService} from '../shared/new-http.service';
+import {AccordionModule} from 'primeng/accordion';
+import { SharedModule } from 'primeng/api';
+import {DataViewModule} from 'primeng/dataview';
+import {CarouselModule} from 'primeng/carousel';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+
 
 @NgModule({
   declarations: [AwardsComponent],
-  imports: [RouterModule, AccordionModule, CommonModule, SharedModule, DataGridModule, CarouselModule, GrowlModule],
+  imports: [RouterModule, AccordionModule, MessagesModule, MessageModule, CommonModule, SharedModule, DataViewModule, CarouselModule, ToastModule],
   providers: [NewHttpService],
   exports: [AwardsComponent]
 })

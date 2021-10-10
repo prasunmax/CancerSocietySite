@@ -1,2 +1,0 @@
-To enable symlink in virtualbox run the below command when the virtual box is closed.
-VBoxManage setextradata Mint VBoxInternal2/SharedFoldersEnableSymlinksCreate/sf_html 1

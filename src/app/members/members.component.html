@@ -1,4 +1,4 @@
-<p-dataList [value]="members" [paginator]="true" [rows]="5">
+<p-dataView [value]="members" [paginator]="true" [rows]="5">
   <header>
     Members
   </header>
@@ -28,7 +28,7 @@
       </div>
     </div>
   </ng-template>
-</p-dataList>
+</p-dataView>
 
 <p-dialog header="Member Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
           width="300" (onAfterHide)="onDialogHide()">

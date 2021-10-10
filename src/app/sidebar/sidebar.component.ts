@@ -1,6 +1,7 @@
-import {Component, ElementRef, NgZone, OnInit, Renderer2} from '@angular/core';
-import {Sidebar} from 'primeng/components/sidebar/sidebar';
-import {DomHandler} from 'primeng/components/dom/domhandler';
+import {ChangeDetectorRef, Component, ElementRef, NgZone, OnInit, Renderer2} from '@angular/core';
+import { Sidebar } from 'primeng/sidebar';
+import {DomHandler} from 'primeng/dom';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'prasun-sidebar',
@@ -10,8 +11,8 @@ import {DomHandler} from 'primeng/components/dom/domhandler';
 })
 export class PrasunSidebarComponent extends Sidebar implements OnInit {
 
-  constructor(el: ElementRef, domHandler: DomHandler, renderer: Renderer2, zone: NgZone) {
-    super(el, renderer);
+  constructor(el: ElementRef, domHandler: DomHandler, renderer: Renderer2, zone: NgZone, cd: ChangeDetectorRef, config: PrimeNGConfig) {
+    super(el, renderer,cd, config);
   }
 
   ngOnInit() {

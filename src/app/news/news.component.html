@@ -19,13 +19,13 @@
   </p-tabPanel>
   <p-tabPanel header="All">
 
-    <p-dataGrid [value]="newspaper" [lazy]="true" (onLazyLoad)="onTabOpen($event,'ALL')">
+    <p-dataView [value]="newspaper" [lazy]="true" (onLazyLoad)="onTabOpen($event,'ALL')">
       <ng-template let-paper pTemplate="body">
         <div class="ui-g-12 ui-md-3">
           <a href="{{paper.nmUrl}}" (click)="selectedPaper($event, paper,index)">{{paper.nwDate}}</a>
         </div>
       </ng-template>
-    </p-dataGrid>
+    </p-dataView>
   </p-tabPanel>
 </p-tabView>
 <prasun-dialog header="News Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"

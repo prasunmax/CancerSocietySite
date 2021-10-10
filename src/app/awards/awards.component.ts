@@ -1,21 +1,22 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {Message} from 'primeng/primeng';
+
 import {Awards} from './awards';
 import {SITEURL} from '../shared/globals';
+import {Message,MessageService} from 'primeng/api';
 
 @Component({
   selector: 'prasun-awards',
   templateUrl: './awards.component.html',
   styleUrls: ['./awards.component.css'],
   encapsulation: ViewEncapsulation.None,
-
+  providers: [MessageService]
 })
 export class AwardsComponent implements OnInit {
   images: any[];
   msgs: Message[];
 
 
-  constructor() {
+  constructor(private messageService: MessageService) {
   }
 
   ngOnInit() {
@@ -24,7 +25,7 @@ export class AwardsComponent implements OnInit {
       {awUrl: SITEURL + '/image/global_achievers_foundation.jpg', name: 'Bharat Shiksha Ratan'},
       {awUrl: SITEURL + '/image/ORIGINAL_ISO_CERTIFICATE.jpg', name: 'ISO 9001:2008 certified'},
     ];
-    this.msgs = [];
+    
 
     /*   this.images.push({
          source: SITEURL + '/image/bharat_shiskha_ratan.jpg',
@@ -41,8 +42,10 @@ export class AwardsComponent implements OnInit {
   }
 
   selectAward(award: Awards) {
-    this.msgs = [];
-    this.msgs.push({severity: 'info', detail: award.name});
+    this.messageService.add({severity:'success', summary:'Service Message', detail:award.name});
   }
+  clear() {
+    this.messageService.clear();
+}
 
 }

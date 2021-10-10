@@ -1,4 +1,4 @@
-<p-dataGrid [value]="eventDet" [lazy]="true" (onLazyLoad)="loadData($event)">
+<p-dataView [value]="eventDet" [lazy]="true" (onLazyLoad)="loadData($event)">
   <ng-template let-event pTemplate="body">
     <div style="padding:4px" class="ui-g-12 ui-md-3">
       <p-panel [header]="event.title" [style]="{'text-align':'center'}">
@@ -7,7 +7,7 @@
       </p-panel>
     </div>
   </ng-template>
-</p-dataGrid>
+</p-dataView>
 
 <prasun-dialog [header]="dialogText" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
                (onAfterHide)="onDialogHide()" (onShow)="onDetailsShow(selectedEvents)" [minY]="50"

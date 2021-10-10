@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MenuItem} from 'primeng/primeng';
+import {MenuItem} from 'primeng/api';
 import {MenuService} from './menu.service';
 import {AuthService} from '../auth/auth.service';
 

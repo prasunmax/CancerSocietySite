@@ -1,9 +1,10 @@
-import {Component, ElementRef, NgZone, OnInit, Renderer2} from '@angular/core';
+import {ChangeDetectorRef, Component, ElementRef, NgZone, OnInit, Renderer2} from '@angular/core';
 import {Dialog} from 'primeng/dialog';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {EventBean} from '../events/events';
 import {DialogService} from './dialog.service';
-import {DomHandler} from 'primeng/api';
+import {DomHandler} from 'primeng/dom';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'prasun-dialog',
@@ -22,6 +23,11 @@ import {DomHandler} from 'primeng/api';
 export class PrasunDialogComponent extends Dialog implements OnInit {
   leftVisible = false;
   rightVisible = true;
+  width = 200;
+  height = 300;
+  minWidth = 200;
+  minHeight = 300;
+
 
   thisEvent: EventBean;
   //
@@ -36,9 +42,9 @@ export class PrasunDialogComponent extends Dialog implements OnInit {
   // @Output() eventChange: EventEmitter = new EventEmitter();
   // private selectedEvents: EventBean;
   constructor(private dialogService: DialogService, el: ElementRef, domHandler: DomHandler,
-              renderer: Renderer2, zone: NgZone) {
+              renderer: Renderer2, zone: NgZone, cd: ChangeDetectorRef, config: PrimeNGConfig) {
     // noinspection JSAnnotator
-    super(el, renderer, zone);
+    super(el, renderer, zone, cd, config);
   }
 
   ngOnInit() {

@@ -1,5 +1,7 @@
-import {Galleria} from 'primeng/primeng';
+
 import {Component, ElementRef} from '@angular/core';
+import { Galleria } from 'primeng/galleria';
+
 
 
 @Component({
@@ -8,6 +10,26 @@ import {Component, ElementRef} from '@angular/core';
 })
 export class HomeGalleriaComponent extends Galleria {
   private domHandler: any;
+  panels: any;
+  showFilmstrip: any;
+  frames: any;
+  stripWrapper: any;
+  frameHeight: string;
+  showCaption: any;
+  caption: any;
+  style:any;
+  styleClass:any;
+  public panelWidth: any;
+  public panelHeight: any;
+  images: any[];
+  width = 500;
+  height = 500;
+  private maxWidth = 500;
+  display = false;
+  dlgTxt = '';
+  imgSrc = '';
+
+
   render() {
     this.panels = this.domHandler.find(this.panelWrapper, 'li.ui-galleria-panel');
     if (this.showFilmstrip) {
@@ -29,5 +51,17 @@ export class HomeGalleriaComponent extends Galleria {
       this.startSlideshow();
     }
     this.container.style.visibility = 'visible';
+  }
+  panelWrapper(panelWrapper: any, arg1: string): any {
+    throw new Error('Method not implemented.');
+  }
+  strip(strip: any, arg1: string): any {
+    throw new Error('Method not implemented.');
+  }
+  container(container: any, arg1: string): any {
+    throw new Error('Method not implemented.');
+  }
+  startSlideshow() {
+    throw new Error('Method not implemented.');
   }
 }
